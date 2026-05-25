@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="style.css">
+    <div class="auth-form-section">
+
+      <h1>Login</h1>
+
+      <p>
+        Access your Stackly Healthcare dashboard
+      </p>
+
+      <form id="loginForm">
+
+        <input type="email" id="email" placeholder="Email Address" required>
+
+        <input type="password" id="password" placeholder="Password" required>
+
+        <select id="role" required>
+          <option value="">Select Role</option>
+          <option value="admin">Admin</option>
+          <option value="doctor">Doctor</option>
+          <option value="patient">Patient</option>
+        </select>
+
+        <button type="submit" class="auth-btn">
+          Login
+        </button>
+
+      </form>
+
+      <div class="auth-link">
+        Don't have an account?
+        <a href="register.html">Create Account</a>
+      </div>
+
+      <div class="demo-box">
+
+        <h3>Demo Access</h3>
+
+        <p><strong>Admin:</strong> admin@stackly.com</p>
+        <p><strong>Doctor:</strong> doctor@stackly.com</p>
+        <p><strong>Patient:</strong> patient@stackly.com</p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+ <script>
+
+  document
+    .getElementById("loginForm")
+    .addEventListener("submit", function(event){
+
+      event.preventDefault();
+
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      const role = document.getElementById("role").value;
+
+      if(email === "" || password === "" || role === ""){
+        alert("Please fill all fields");
+        return;
+      }
+
+      // ADMIN LOGIN
+      if(role === "admin"){
+        window.location.href = "admin-dashboard.html";
+      }
+
+      // DOCTOR LOGIN
+      else if(role === "doctor"){
+        window.location.href = "doctor-dashboard.html";
+      }
+
+      // PATIENT LOGIN
+      else if(role === "patient"){
+        window.location.href = "patient-dashboard.html";
+      }
+
+      else{
+        alert("Invalid Role");
+      }
+
+    });
+
+</script>
+
+</body>
+</html>
