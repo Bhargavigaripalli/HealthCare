@@ -2,600 +2,333 @@
 <html lang="en">
 
 <head>
-
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Create Account - Stackly Healthcare</title>
 
-  <!-- GOOGLE FONT -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- FONT AWESOME -->
-  <link rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
   <style>
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:'Poppins',sans-serif;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
     }
 
-    body{
+    html, body {
+      height: 100%;
+      overflow-x: hidden;
+    }
 
-      min-height:100vh;
-
-      display:flex;
-      justify-content:center;
-      align-items:center;
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
 
       background:
-      linear-gradient(rgba(15,23,42,0.88),
-      rgba(15,23,42,0.88)),
+        linear-gradient(rgba(15,23,42,0.88), rgba(15,23,42,0.88)),
+        url('https://thumbs.dreamstime.com/b/family-health-care-insurance-concept-family-health-care-insurance-concept-stethoscope-paper-cut-family-102883760.jpg');
 
-      url('https://thumbs.dreamstime.com/b/family-health-care-insurance-concept-family-health-care-insurance-concept-stethoscope-paper-cut-family-102883760.jpg');
-
-      background-size:cover;
-      background-position:center;
-
-      padding:20px;
-
-      overflow-x:hidden;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
 
-    /* =========================
-       BACK BUTTON
-    ========================== */
-
-    .back-home{
-
-      position:absolute;
-
-      top:20px;
-      left:20px;
-
-      padding:12px 24px;
-
-      border-radius:40px;
-
-      background:linear-gradient(135deg,#0ea5e9,#38bdf8);
-
-      color:white;
-
-      text-decoration:none;
-
-      font-weight:600;
-
-      transition:0.4s;
-
-      box-shadow:0 10px 25px rgba(14,165,233,0.3);
+    /* BACK BUTTON */
+    .back-home {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      padding: 12px 20px;
+      border-radius: 40px;
+      background: linear-gradient(135deg,#0ea5e9,#38bdf8);
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+      z-index: 1000;
     }
 
-    .back-home:hover{
-
-      transform:translateY(-4px);
-
-      box-shadow:0 15px 30px rgba(14,165,233,0.5);
+    .back-home:hover {
+      transform: translateY(-3px);
     }
 
-    /* =========================
-       MAIN CONTAINER
-    ========================== */
+    /* MAIN CONTAINER */
+    .auth-container {
+      width: 100%;
+      max-width: 1100px;
 
-    .auth-container{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
 
-      width:1100px;
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(18px);
 
-      display:grid;
+      border-radius: 30px;
+      overflow: hidden;
 
-      grid-template-columns:1fr 1fr;
-
-      background:rgba(255,255,255,0.08);
-
-      backdrop-filter:blur(20px);
-
-      border:1px solid rgba(255,255,255,0.1);
-
-      border-radius:30px;
-
-      overflow:hidden;
-
-      box-shadow:0 25px 60px rgba(0,0,0,0.4);
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 25px 60px rgba(0,0,0,0.4);
     }
 
-    /* =========================
-       IMAGE
-    ========================== */
-
-    .auth-image{
-
-      overflow:hidden;
+    /* IMAGE */
+    .auth-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
-    .auth-image img{
-
-      width:100%;
-      height:100%;
-
-      object-fit:cover;
-
-      transition:0.5s;
+    /* FORM */
+    .auth-form-section {
+      padding: 45px;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
-    .auth-image:hover img{
-      transform:scale(1.05);
+    .auth-form-section h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
     }
 
-    /* =========================
-       FORM SECTION
-    ========================== */
-
-    .auth-form-section{
-
-      padding:50px 45px;
-
-      color:white;
+    .auth-form-section p {
+      color: #cbd5e1;
+      margin-bottom: 20px;
+      line-height: 1.6;
     }
 
-    .auth-form-section h1{
-
-      font-size:42px;
-
-      margin-bottom:10px;
+    /* GRID */
+    .input-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
     }
 
-    .auth-form-section p{
-
-      color:#cbd5e1;
-
-      margin-bottom:25px;
-
-      line-height:1.7;
-    }
-
-    /* =========================
-       GRID
-    ========================== */
-
-    .input-grid{
-
-      display:grid;
-
-      grid-template-columns:1fr 1fr;
-
-      gap:15px;
-    }
-
-    /* =========================
-       INPUTS
-    ========================== */
-
+    /* INPUTS */
     form input,
-    form select{
+    form select {
+      width: 100%;
+      padding: 14px 16px;
+      margin-bottom: 14px;
 
-      width:100%;
+      border-radius: 12px;
+      border: none;
+      outline: none;
 
-      padding:16px 18px;
+      background: rgba(255,255,255,0.08);
+      color: white;
 
-      margin-bottom:18px;
-
-      border:none;
-
-      border-radius:14px;
-
-      background:rgba(255,255,255,0.08);
-
-      color:white;
-
-      font-size:15px;
-
-      outline:none;
-
-      transition:0.4s;
-
-      border:1px solid transparent;
+      border: 1px solid transparent;
     }
 
-    form input::placeholder{
-      color:#cbd5e1;
+    form input::placeholder {
+      color: #cbd5e1;
     }
 
     form input:focus,
-    form select:focus{
-
-      border:1px solid #38bdf8;
-
-      box-shadow:0 0 15px rgba(56,189,248,0.3);
+    form select:focus {
+      border: 1px solid #38bdf8;
     }
 
-    form select option{
-
-      background:#0f172a;
-
-      color:white;
+    form select option {
+      background: #0f172a;
+      color: white;
     }
 
-    /* =========================
-       TERMS
-    ========================== */
-
-    .terms{
-
-      display:flex;
-
-      align-items:center;
-
-      gap:10px;
-
-      font-size:14px;
-
-      color:#cbd5e1;
-
-      margin-bottom:20px;
+    /* TERMS */
+    .terms {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      color: #cbd5e1;
+      margin-bottom: 15px;
     }
 
-    .terms input{
-
-      width:auto;
-
-      margin:0;
+    .terms input {
+      width: auto;
     }
 
-    /* =========================
-       PASSWORD ERROR
-    ========================== */
-
-    #passwordError{
-
-      color:#ff6b6b;
-
-      font-size:14px;
-
-      margin-top:-10px;
-
-      margin-bottom:15px;
-
-      display:none;
+    /* ERROR */
+    #passwordError {
+      color: #ff6b6b;
+      font-size: 13px;
+      margin-bottom: 10px;
+      display: none;
     }
 
-    /* =========================
-       BUTTON
-    ========================== */
+    /* BUTTON */
+    .auth-btn {
+      width: 100%;
+      padding: 15px;
+      border: none;
+      border-radius: 12px;
 
-    .auth-btn{
+      background: linear-gradient(135deg,#0ea5e9,#38bdf8);
+      color: white;
 
-      width:100%;
+      font-size: 16px;
+      font-weight: 600;
 
-      padding:16px;
-
-      border:none;
-
-      border-radius:14px;
-
-      background:
-      linear-gradient(135deg,#0ea5e9,#38bdf8);
-
-      color:white;
-
-      font-size:17px;
-
-      font-weight:600;
-
-      cursor:pointer;
-
-      transition:0.4s;
-
-      box-shadow:0 12px 25px rgba(14,165,233,0.3);
+      cursor: pointer;
+      transition: 0.3s;
     }
 
-    .auth-btn:hover{
-
-      transform:translateY(-4px);
-
-      box-shadow:0 15px 30px rgba(14,165,233,0.5);
+    .auth-btn:hover {
+      transform: translateY(-3px);
     }
 
-    /* =========================
-       LOGIN LINK
-    ========================== */
-
-    .auth-link{
-
-      margin-top:22px;
-
-      text-align:center;
-
-      color:#cbd5e1;
+    /* LOGIN LINK */
+    .auth-link {
+      margin-top: 18px;
+      text-align: center;
+      color: #cbd5e1;
     }
 
-    .auth-link a{
-
-      color:#38bdf8;
-
-      text-decoration:none;
-
-      font-weight:600;
-    }
-
-    .auth-link a:hover{
-      text-decoration:underline;
+    .auth-link a {
+      color: #38bdf8;
+      text-decoration: none;
+      font-weight: 600;
     }
 
     /* =========================
        RESPONSIVE
     ========================== */
 
-    @media(max-width:992px){
+    @media (max-width: 992px) {
 
-      .auth-container{
-
-        width:100%;
-
-        grid-template-columns:1fr;
+      body {
+        align-items: flex-start;
       }
 
-      .auth-image{
-        height:280px;
+      .auth-container {
+        grid-template-columns: 1fr;
+        margin-top: 80px;
       }
 
+      .auth-image {
+        height: 260px;
+      }
+
+      .auth-form-section {
+        padding: 35px 25px;
+        text-align: center;
+      }
+
+      .input-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
-    @media(max-width:768px){
+    @media (max-width: 480px) {
 
-      body{
-        padding:15px;
+      body {
+        padding: 10px;
       }
 
-      .auth-form-section{
-
-        padding:35px 25px;
+      .auth-image {
+        height: 180px;
       }
 
-      .auth-form-section h1{
-        font-size:34px;
-      }
-
-      .input-grid{
-        grid-template-columns:1fr;
-      }
-
-      .back-home{
-
-        top:15px;
-        left:15px;
-
-        padding:10px 18px;
-
-        font-size:14px;
-      }
-
-    }
-
-    @media(max-width:480px){
-
-      .auth-container{
-        border-radius:20px;
-      }
-
-      .auth-image{
-        height:220px;
-      }
-
-      .auth-form-section h1{
-        font-size:28px;
-      }
-
-      .auth-form-section{
-
-        padding:28px 18px;
+      .auth-form-section h1 {
+        font-size: 28px;
       }
 
       form input,
-      form select{
-
-        padding:14px;
-
-        font-size:14px;
+      form select {
+        padding: 12px;
+        font-size: 14px;
       }
 
-      .auth-btn{
-
-        padding:14px;
-
-        font-size:15px;
+      .auth-btn {
+        padding: 13px;
       }
-
     }
 
   </style>
-
 </head>
 
 <body>
 
-  <!-- BACK BUTTON -->
-
-  <a href="index.html" class="back-home">
-    ← Back to Home
-  </a>
-
-  <!-- MAIN CONTAINER -->
+  <a href="index.html" class="back-home">← Back to Home</a>
 
   <div class="auth-container">
 
     <!-- IMAGE -->
-
     <div class="auth-image">
-
-      <img src="https://thumbs.dreamstime.com/b/family-health-care-insurance-concept-family-health-care-insurance-concept-stethoscope-paper-cut-family-102883760.jpg">
-
+      <img src="https://thumbs.dreamstime.com/b/family-health-care-insurance-concept-family-health-care-insurance-concept-stethoscope-paper-cut-family-102883760.jpg" alt="">
     </div>
 
-    <!-- FORM SECTION -->
-
+    <!-- FORM -->
     <div class="auth-form-section">
 
       <h1>Create Account</h1>
-
-      <p>
-        Create your Stackly Healthcare account
-        and access smart healthcare services.
-      </p>
-
-      <!-- FORM -->
+      <p>Create your Stackly Healthcare account and start managing healthcare services.</p>
 
       <form id="registerForm">
 
         <div class="input-grid">
-
-          <input type="text"
-          placeholder="First Name"
-          required>
-
-          <input type="text"
-          placeholder="Last Name"
-          required>
-
+          <input type="text" placeholder="First Name" required>
+          <input type="text" placeholder="Last Name" required>
         </div>
 
-        <input type="email"
-        placeholder="Email Address"
-        required>
+        <input type="email" placeholder="Email Address" required>
 
         <select required>
-
-          <option value="" disabled selected>
-            Select Role
-          </option>
-
-          <option>
-            Admin
-          </option>
-
-          <option>
-            Doctor
-          </option>
-
-          <option>
-            Patient
-          </option>
-
+          <option value="" disabled selected>Select Role</option>
+          <option>Admin</option>
+          <option>Doctor</option>
+          <option>Patient</option>
         </select>
 
-        <!-- PASSWORD -->
+        <input type="password" id="password" placeholder="Password" required>
+        <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
 
-        <input
-        type="password"
-        id="password"
-        placeholder="Enter Password"
-        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{8,}"
-        title="Password must contain uppercase, lowercase, number and special symbol"
-        required>
-
-        <!-- CONFIRM PASSWORD -->
-
-        <input
-        type="password"
-        id="confirmPassword"
-        placeholder="Confirm Password"
-        required>
-
-        <!-- ERROR MESSAGE -->
-
-        <p id="passwordError">
-          Passwords do not match
-        </p>
-
-        <!-- TERMS -->
+        <p id="passwordError">Passwords do not match</p>
 
         <label class="terms">
-
           <input type="checkbox" required>
-
-          I agree to the Terms & Conditions
-
+          I agree to Terms & Conditions
         </label>
 
-        <!-- BUTTON -->
-
-        <button type="submit" class="auth-btn">
-
-          Create Account
-
-        </button>
+        <button type="submit" class="auth-btn">Create Account</button>
 
       </form>
 
-      <!-- LOGIN LINK -->
-
       <div class="auth-link">
-
-        Already have an account?
-
-        <a href="login.html">
-          Login
-        </a>
-
+        Already have an account? <a href="login.html">Login</a>
       </div>
 
     </div>
 
   </div>
 
-  <!-- SCRIPT -->
+  <script>
+    const form = document.getElementById("registerForm");
+    const password = document.getElementById("password");
+    const confirmPassword = document.getElementById("confirmPassword");
+    const passwordError = document.getElementById("passwordError");
 
-   <script>
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
 
-  const form =
-  document.getElementById("registerForm");
-
-  const password =
-  document.getElementById("password");
-
-  const confirmPassword =
-  document.getElementById("confirmPassword");
-
-  const passwordError =
-  document.getElementById("passwordError");
-
-  form.addEventListener("submit", function(e){
-
-    e.preventDefault();
-
-    // PASSWORD MATCH CHECK
-
-    if(password.value !== confirmPassword.value){
-
-      passwordError.style.display = "block";
-
-      confirmPassword.style.border =
-      "1px solid #ff6b6b";
-
-    }
-
-    else{
+      if (password.value !== confirmPassword.value) {
+        passwordError.style.display = "block";
+        return;
+      }
 
       passwordError.style.display = "none";
 
-      confirmPassword.style.border =
-      "1px solid transparent";
-
       alert("Account Created Successfully");
-
-      // REDIRECT TO LOGIN PAGE
-
       window.location.href = "login.html";
-
-    }
-
-  });
-
-</script>
+    });
+  </script>
 
 </body>
-
 </html>

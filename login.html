@@ -3,10 +3,11 @@
 
 <head>
 
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
 
-  <meta name="viewport"
-    content="width=device-width, initial-scale=1.0">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0" />
 
   <title>Stackly Healthcare Login</title>
 
@@ -18,7 +19,8 @@
 
   <!-- FONT AWESOME -->
 
-  <link rel="stylesheet"
+  <link
+    rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
   <style>
@@ -39,17 +41,19 @@
       align-items:center;
 
       background:
-      linear-gradient(rgba(15,23,42,0.88),
+      linear-gradient(
+      rgba(15,23,42,0.88),
       rgba(15,23,42,0.88)),
 
       url('https://img.magnific.com/free-photo/flat-lay-health-still-life-arrangement-with-copy-space_23-2148854064.jpg');
 
       background-size:cover;
       background-position:center;
+      background-repeat:no-repeat;
 
       padding:20px;
 
-      overflow:hidden;
+      overflow-x:hidden;
     }
 
     /* =========================
@@ -58,14 +62,14 @@
 
     .back-home{
 
-      position:absolute;
+      position:fixed;
 
       top:20px;
       left:20px;
 
-      padding:12px 24px;
+      padding:12px 22px;
 
-      border-radius:40px;
+      border-radius:50px;
 
       background:
       linear-gradient(135deg,#0ea5e9,#38bdf8);
@@ -76,12 +80,14 @@
 
       font-weight:600;
 
+      font-size:15px;
+
       transition:0.4s;
+
+      z-index:1000;
 
       box-shadow:
       0 10px 25px rgba(14,165,233,0.3);
-
-      z-index:100;
     }
 
     .back-home:hover{
@@ -96,13 +102,15 @@
     .auth-container{
 
       width:100%;
-      max-width:1050px;
+      max-width:1100px;
 
       min-height:650px;
 
       display:grid;
 
       grid-template-columns:1fr 1fr;
+
+      align-items:center;
 
       background:rgba(255,255,255,0.08);
 
@@ -121,11 +129,12 @@
     }
 
     /* =========================
-       IMAGE
+       IMAGE SECTION
     ========================== */
 
     .auth-image{
 
+      width:100%;
       height:100%;
     }
 
@@ -135,6 +144,8 @@
       height:100%;
 
       object-fit:cover;
+
+      display:block;
     }
 
     /* =========================
@@ -143,7 +154,9 @@
 
     .auth-form-section{
 
-      padding:45px;
+      width:100%;
+
+      padding:50px 45px;
 
       display:flex;
       flex-direction:column;
@@ -154,18 +167,22 @@
 
     .auth-form-section h1{
 
-      font-size:52px;
+      font-size:48px;
 
       margin-bottom:10px;
+
+      line-height:1.2;
     }
 
     .auth-form-section p{
 
       color:#cbd5e1;
 
-      line-height:1.7;
+      line-height:1.8;
 
       margin-bottom:28px;
+
+      font-size:15px;
     }
 
     /* =========================
@@ -204,6 +221,7 @@
     }
 
     form input::placeholder{
+
       color:#cbd5e1;
     }
 
@@ -232,10 +250,10 @@
 
       color:#cbd5e1;
 
-      margin-top:-10px;
+      margin-top:-8px;
       margin-bottom:18px;
 
-      line-height:1.6;
+      line-height:1.7;
     }
 
     /* =========================
@@ -257,7 +275,7 @@
 
       color:white;
 
-      font-size:17px;
+      font-size:16px;
 
       font-weight:600;
 
@@ -278,7 +296,7 @@
     }
 
     /* =========================
-       LINKS
+       AUTH LINK
     ========================== */
 
     .auth-link{
@@ -288,6 +306,8 @@
       text-align:center;
 
       color:#cbd5e1;
+
+      font-size:15px;
     }
 
     .auth-link a{
@@ -326,6 +346,8 @@
       margin-bottom:12px;
 
       color:#38bdf8;
+
+      font-size:20px;
     }
 
     .demo-box p{
@@ -335,6 +357,8 @@
       color:#e2e8f0;
 
       font-size:14px;
+
+      line-height:1.7;
     }
 
     /* =========================
@@ -352,48 +376,62 @@
         opacity:1;
         transform:translateY(0);
       }
-
     }
 
     /* =========================
-       RESPONSIVE
+       TABLET RESPONSIVE
     ========================== */
 
     @media(max-width:992px){
 
       body{
-        overflow:auto;
+
+        padding:20px;
+
+        align-items:flex-start;
       }
 
       .auth-container{
 
         grid-template-columns:1fr;
 
-        max-width:500px;
+        max-width:650px;
+
+        margin-top:80px;
       }
 
       .auth-image{
 
-        height:250px;
+        height:300px;
       }
 
+      .auth-form-section{
+
+        padding:40px 35px;
+      }
+
+      .auth-form-section h1{
+
+        font-size:40px;
+
+        text-align:center;
+      }
+
+      .auth-form-section p{
+
+        text-align:center;
+      }
     }
+
+    /* =========================
+       MOBILE RESPONSIVE
+    ========================== */
 
     @media(max-width:768px){
 
       body{
 
         padding:15px;
-      }
-
-      .auth-form-section{
-
-        padding:35px 24px;
-      }
-
-      .auth-form-section h1{
-
-        font-size:38px;
       }
 
       .back-home{
@@ -406,13 +444,26 @@
         font-size:14px;
       }
 
-    }
+      .auth-container{
 
-    @media(max-width:480px){
+        margin-top:70px;
+
+        border-radius:24px;
+      }
+
+      .auth-image{
+
+        height:240px;
+      }
+
+      .auth-form-section{
+
+        padding:35px 24px;
+      }
 
       .auth-form-section h1{
 
-        font-size:30px;
+        font-size:32px;
       }
 
       .auth-form-section p{
@@ -423,14 +474,87 @@
       form input,
       form select{
 
+        padding:15px;
+      }
+
+      .demo-box{
+
+        padding:18px;
+      }
+    }
+
+    /* =========================
+       SMALL MOBILE
+    ========================== */
+
+    @media(max-width:480px){
+
+      body{
+
+        padding:12px;
+      }
+
+      .auth-container{
+
+        margin-top:65px;
+
+        border-radius:20px;
+      }
+
+      .auth-image{
+
+        height:190px;
+      }
+
+      .auth-form-section{
+
+        padding:28px 18px;
+      }
+
+      .auth-form-section h1{
+
+        font-size:28px;
+      }
+
+      .auth-form-section p{
+
+        font-size:13px;
+      }
+
+      form input,
+      form select{
+
         padding:14px;
+
+        font-size:14px;
       }
 
       .auth-btn{
 
         padding:14px;
+
+        font-size:15px;
       }
 
+      .password-note{
+
+        font-size:12px;
+      }
+
+      .demo-box h3{
+
+        font-size:18px;
+      }
+
+      .demo-box p{
+
+        font-size:13px;
+      }
+
+      .auth-link{
+
+        font-size:14px;
+      }
     }
 
   </style>
@@ -455,7 +579,9 @@
 
     <div class="auth-image">
 
-      <img src="https://img.magnific.com/free-photo/flat-lay-health-still-life-arrangement-with-copy-space_23-2148854064.jpg">
+      <img
+        src="https://img.magnific.com/free-photo/flat-lay-health-still-life-arrangement-with-copy-space_23-2148854064.jpg"
+        alt="Healthcare">
 
     </div>
 
@@ -499,24 +625,33 @@
         <select id="role" required>
 
           <option value="" disabled selected>
+
             Select Role
+
           </option>
 
           <option value="admin">
+
             Admin
+
           </option>
 
           <option value="doctor">
+
             Doctor
+
           </option>
 
           <option value="patient">
+
             Patient
+
           </option>
 
         </select>
 
-        <button type="submit"
+        <button
+          type="submit"
           class="auth-btn">
 
           Login
@@ -546,18 +681,24 @@
         <h3>Demo Access</h3>
 
         <p>
+
           <strong>Admin:</strong>
           admin@stackly.com
+
         </p>
 
         <p>
+
           <strong>Doctor:</strong>
           doctor@stackly.com
+
         </p>
 
         <p>
+
           <strong>Patient:</strong>
           patient@stackly.com
+
         </p>
 
       </div>
@@ -613,7 +754,7 @@
         return;
       }
 
-      // ADMIN
+      // REDIRECT BASED ON ROLE
 
       if(role === "admin"){
 
@@ -621,15 +762,11 @@
         "admin-dashboard.html";
       }
 
-      // DOCTOR
-
       else if(role === "doctor"){
 
         window.location.href =
         "doctor-dashboard.html";
       }
-
-      // PATIENT
 
       else if(role === "patient"){
 
