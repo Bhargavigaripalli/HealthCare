@@ -1,34 +1,629 @@
-<!DOCTYPE html>
-  <div class="dashboard-main">
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Admin Dashboard | Stackly Healthcare</title>
+
+  <!-- GOOGLE FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+
+      background:#f1f5f9;
+
+      min-height:100vh;
+
+      display:flex;
+    }
+
+    /* =========================
+       SIDEBAR
+    ========================= */
+
+    .sidebar{
+
+      width:270px;
+
+      background:linear-gradient(180deg,#0f172a,#0ea5e9);
+
+      color:white;
+
+      padding:30px 20px;
+
+      position:fixed;
+
+      top:0;
+      left:0;
+
+      height:100vh;
+
+      overflow:auto;
+    }
+
+    .logo{
+
+      display:flex;
+      align-items:center;
+      gap:12px;
+
+      font-size:30px;
+      font-weight:700;
+
+      margin-bottom:50px;
+    }
+
+    .logo i{
+
+      color:#38bdf8;
+    }
+
+    .sidebar ul{
+
+      list-style:none;
+    }
+
+    .sidebar ul li{
+
+      margin-bottom:18px;
+    }
+
+    .sidebar ul li a{
+
+      text-decoration:none;
+
+      color:white;
+
+      display:flex;
+      align-items:center;
+      gap:14px;
+
+      padding:16px 18px;
+
+      border-radius:14px;
+
+      transition:0.4s;
+    }
+
+    .sidebar ul li a:hover{
+
+      background:rgba(255,255,255,0.15);
+
+      transform:translateX(6px);
+    }
+
+    /* =========================
+       MAIN CONTENT
+    ========================= */
+
+    .main-content{
+
+      margin-left:270px;
+
+      width:calc(100% - 270px);
+
+      padding:30px;
+    }
+
+    /* TOPBAR */
+
+    .topbar{
+
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+
+      margin-bottom:35px;
+
+      background:white;
+
+      padding:20px 25px;
+
+      border-radius:20px;
+
+      box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .topbar h1{
+
+      font-size:30px;
+
+      color:#0f172a;
+    }
+
+    .logout-btn{
+
+      padding:14px 28px;
+
+      border:none;
+
+      border-radius:40px;
+
+      background:linear-gradient(135deg,#ef4444,#dc2626);
+
+      color:white;
+
+      font-size:15px;
+
+      font-weight:600;
+
+      cursor:pointer;
+
+      transition:0.4s;
+    }
+
+    .logout-btn:hover{
+
+      transform:translateY(-5px);
+
+      box-shadow:0 12px 20px rgba(239,68,68,0.4);
+    }
+
+    /* =========================
+       DASHBOARD CARDS
+    ========================= */
+
+    .dashboard-cards{
+
+      display:grid;
+
+      grid-template-columns:repeat(4,1fr);
+
+      gap:25px;
+
+      margin-bottom:35px;
+    }
+
+    .dash-card{
+
+      background:white;
+
+      padding:28px;
+
+      border-radius:22px;
+
+      box-shadow:0 12px 30px rgba(0,0,0,0.08);
+
+      transition:0.4s;
+
+      position:relative;
+
+      overflow:hidden;
+    }
+
+    .dash-card::before{
+
+      content:"";
+
+      position:absolute;
+
+      top:0;
+      left:0;
+
+      width:100%;
+      height:6px;
+
+      background:linear-gradient(90deg,#0ea5e9,#38bdf8);
+    }
+
+    .dash-card:hover{
+
+      transform:translateY(-8px);
+    }
+
+    .dash-card i{
+
+      font-size:38px;
+
+      color:#0ea5e9;
+
+      margin-bottom:18px;
+    }
+
+    .dash-card h3{
+
+      color:#475569;
+
+      margin-bottom:10px;
+
+      font-size:18px;
+    }
+
+    .dash-card h2{
+
+      font-size:34px;
+
+      color:#0f172a;
+    }
+
+    /* =========================
+       TABLE SECTION
+    ========================= */
+
+    .dashboard-table{
+
+      background:white;
+
+      padding:30px;
+
+      border-radius:25px;
+
+      box-shadow:0 10px 30px rgba(0,0,0,0.08);
+
+      overflow-x:auto;
+    }
+
+    .dashboard-table h2{
+
+      margin-bottom:25px;
+
+      color:#0f172a;
+    }
+
+    table{
+
+      width:100%;
+
+      border-collapse:collapse;
+    }
+
+    table th{
+
+      background:#0ea5e9;
+
+      color:white;
+
+      padding:16px;
+
+      text-align:left;
+    }
+
+    table td{
+
+      padding:16px;
+
+      border-bottom:1px solid #e2e8f0;
+
+      color:#334155;
+    }
+
+    table tr:hover{
+
+      background:#f8fafc;
+    }
+
+    .status{
+
+      padding:8px 16px;
+
+      border-radius:30px;
+
+      font-size:13px;
+
+      font-weight:600;
+
+      display:inline-block;
+    }
+
+    .admitted{
+
+      background:#dcfce7;
+
+      color:#15803d;
+    }
+
+    .discharged{
+
+      background:#fee2e2;
+
+      color:#dc2626;
+    }
+
+    /* =========================
+       HEALTHCARE BANNER
+    ========================= */
+
+    .health-banner{
+
+      margin-top:35px;
+
+      background:
+      linear-gradient(rgba(15,23,42,0.7),
+      rgba(15,23,42,0.7)),
+
+      url('https://img.freepik.com/free-photo/medical-banner-with-doctor-working-laptop_23-2149611193.jpg');
+
+      background-size:cover;
+      background-position:center;
+
+      padding:60px 40px;
+
+      border-radius:25px;
+
+      color:white;
+
+      text-align:center;
+    }
+
+    .health-banner h2{
+
+      font-size:38px;
+
+      margin-bottom:15px;
+    }
+
+    .health-banner p{
+
+      font-size:17px;
+
+      color:#e2e8f0;
+
+      max-width:700px;
+
+      margin:auto;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media(max-width:1200px){
+
+      .dashboard-cards{
+
+        grid-template-columns:repeat(2,1fr);
+      }
+
+    }
+
+    @media(max-width:900px){
+
+      body{
+        flex-direction:column;
+      }
+
+      .sidebar{
+
+        width:100%;
+
+        height:auto;
+
+        position:relative;
+      }
+
+      .main-content{
+
+        margin-left:0;
+
+        width:100%;
+      }
+
+    }
+
+    @media(max-width:768px){
+
+      .topbar{
+
+        flex-direction:column;
+
+        gap:18px;
+
+        text-align:center;
+      }
+
+      .dashboard-cards{
+
+        grid-template-columns:1fr;
+      }
+
+      .topbar h1{
+
+        font-size:24px;
+      }
+
+      .health-banner{
+
+        padding:40px 20px;
+      }
+
+      .health-banner h2{
+
+        font-size:28px;
+      }
+
+    }
+
+    @media(max-width:480px){
+
+      .main-content{
+
+        padding:15px;
+      }
+
+      .sidebar{
+
+        padding:25px 15px;
+      }
+
+      .logo{
+
+        font-size:24px;
+      }
+
+      .dash-card{
+
+        padding:22px;
+      }
+
+      .dash-card h2{
+
+        font-size:28px;
+      }
+
+      table th,
+      table td{
+
+        padding:12px;
+
+        font-size:13px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- SIDEBAR -->
+
+  <div class="sidebar">
+
+    <div class="logo">
+
+      <i class="fa-solid fa-heart-pulse"></i>
+
+      Stackly
+
+    </div>
+
+    <ul>
+
+      <li>
+        <a href="#">
+          <i class="fa-solid fa-chart-line"></i>
+          Dashboard
+        </a>
+      </li>
+
+      <li>
+        <a href="#">
+          <i class="fa-solid fa-user-doctor"></i>
+          Doctors
+        </a>
+      </li>
+
+      <li>
+        <a href="#">
+          <i class="fa-solid fa-bed-pulse"></i>
+          Patients
+        </a>
+      </li>
+
+      <li>
+        <a href="#">
+          <i class="fa-solid fa-calendar-check"></i>
+          Appointments
+        </a>
+      </li>
+
+      <li>
+        <a href="#">
+          <i class="fa-solid fa-file-medical"></i>
+          Reports
+        </a>
+      </li>
+
+      <li>
+        <a href="#">
+          <i class="fa-solid fa-credit-card"></i>
+          Billing
+        </a>
+      </li>
+
+      <li>
+        <a href="#">
+          <i class="fa-solid fa-gear"></i>
+          Settings
+        </a>
+      </li>
+
+    </ul>
+
+  </div>
+
+  <!-- MAIN CONTENT -->
+
+  <div class="main-content">
+
+    <!-- TOPBAR -->
 
     <div class="topbar">
+
       <h1>Admin Dashboard</h1>
-      <button class="logout-btn">Logout</button>
+
+      <button class="logout-btn" onclick="logout()">
+
+        Logout
+
+      </button>
+
     </div>
+
+    <!-- DASHBOARD CARDS -->
 
     <div class="dashboard-cards">
 
       <div class="dash-card">
+
+        <i class="fa-solid fa-hospital-user"></i>
+
         <h3>Total Patients</h3>
+
         <h2>5,240</h2>
+
       </div>
 
       <div class="dash-card">
+
+        <i class="fa-solid fa-user-doctor"></i>
+
         <h3>Total Doctors</h3>
+
         <h2>124</h2>
+
       </div>
 
       <div class="dash-card">
+
+        <i class="fa-solid fa-money-bill-wave"></i>
+
         <h3>Revenue</h3>
+
         <h2>$92K</h2>
+
       </div>
 
       <div class="dash-card">
+
+        <i class="fa-solid fa-calendar-check"></i>
+
         <h3>Appointments</h3>
+
         <h2>812</h2>
+
       </div>
 
     </div>
+
+    <!-- TABLE -->
 
     <div class="dashboard-table">
 
@@ -37,28 +632,106 @@
       <table>
 
         <tr>
+
           <th>Name</th>
+
           <th>Department</th>
+
           <th>Status</th>
+
         </tr>
 
         <tr>
+
           <td>Sarah Johnson</td>
+
           <td>Cardiology</td>
-          <td>Admitted</td>
+
+          <td>
+            <span class="status admitted">
+              Admitted
+            </span>
+          </td>
+
         </tr>
 
         <tr>
+
           <td>Daniel Smith</td>
+
           <td>Neurology</td>
-          <td>Discharged</td>
+
+          <td>
+            <span class="status discharged">
+              Discharged
+            </span>
+          </td>
+
+        </tr>
+
+        <tr>
+
+          <td>Emily Davis</td>
+
+          <td>Pediatrics</td>
+
+          <td>
+            <span class="status admitted">
+              Admitted
+            </span>
+          </td>
+
+        </tr>
+
+        <tr>
+
+          <td>Michael Brown</td>
+
+          <td>Orthopedics</td>
+
+          <td>
+            <span class="status discharged">
+              Discharged
+            </span>
+          </td>
+
         </tr>
 
       </table>
 
     </div>
 
+    <!-- HEALTHCARE BANNER -->
+
+    <div class="health-banner">
+
+      <h2>
+        Smart Healthcare Management
+      </h2>
+
+      <p>
+
+        Manage patient data, hospital resources,
+        staff schedules, billing, and healthcare
+        analytics all in one secure platform.
+
+      </p>
+
+    </div>
+
   </div>
+
+  <!-- SCRIPT -->
+
+  <script>
+
+    function logout(){
+
+      window.location.href = "login.html";
+
+    }
+
+  </script>
 
 </body>
 </html>

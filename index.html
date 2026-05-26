@@ -1,5 +1,6 @@
  <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
   <meta charset="UTF-8">
@@ -14,13 +15,13 @@
   <!-- GOOGLE FONT -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- ICONS -->
+  <!-- FONT AWESOME -->
   <link rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-  <!-- AOS ANIMATION -->
+  <!-- AOS -->
   <link rel="stylesheet"
-  href="https://unpkg.com/aos@next/dist/aos.css"/>
+    href="https://unpkg.com/aos@next/dist/aos.css" />
 
 </head>
 
@@ -118,15 +119,17 @@
 
         </a>
 
-        <button class="outline-btn">
-          Explore More
-        </button>
+        <a href="404.html">
+
+          <button class="outline-btn">
+            Explore More
+          </button>
+
+        </a>
 
       </div>
 
     </div>
-
-    <!-- HERO IMAGE -->
 
     <div class="hero-image" data-aos="fade-left">
 
@@ -204,8 +207,6 @@
 
     <div class="services-container">
 
-      <!-- CARD -->
-
       <div class="service-card" data-aos="zoom-in">
 
         <img src="https://www.cdi.org.in/images/home/4e23c321-9559-413a-a4cd-c948b9d6eb92_1743232868.jpg">
@@ -218,8 +219,6 @@
 
       </div>
 
-      <!-- CARD -->
-
       <div class="service-card" data-aos="zoom-in">
 
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSClvRaODsigbX8UkjeXU0ZgXWpeKm6IyMumg&s">
@@ -231,8 +230,6 @@
         </p>
 
       </div>
-
-      <!-- CARD -->
 
       <div class="service-card" data-aos="zoom-in">
 
@@ -251,7 +248,7 @@
   </section>
 
   <!-- =========================
-       STATISTICS
+       STATS
   ========================== -->
 
   <section class="stats-section">
@@ -295,7 +292,7 @@
   </section>
 
   <!-- =========================
-       RESEARCH SECTION
+       RESEARCH
   ========================== -->
 
   <section class="research-section" id="research">
@@ -388,27 +385,51 @@
 
   <section class="cta-section">
 
-    <h2 data-aos="zoom-in">
+    <div class="cta-overlay"></div>
 
-      Ready To Experience
-      Modern Healthcare?
+    <div class="cta-content" data-aos="zoom-in">
 
-    </h2>
+      <span class="cta-tag">
+        SMART HEALTHCARE
+      </span>
 
-    <p data-aos="fade-up">
+      <h2>
 
-      Join Stackly Healthcare and experience
-      intelligent healthcare solutions today.
+        Ready To Experience
+        Modern Healthcare?
 
-    </p>
+      </h2>
 
-    <a href="register.html">
+      <p>
 
-      <button class="hero-btn">
-        Get Started
-      </button>
+        Join Stackly Healthcare and experience
+        AI-powered treatment, smart diagnostics,
+        expert specialists, and world-class
+        patient care for a healthier future.
 
-    </a>
+      </p>
+
+      <div class="cta-buttons">
+
+        <a href="register.html">
+
+          <button class="hero-btn">
+            Get Started
+          </button>
+
+        </a>
+
+        <a href="appointment.html">
+
+          <button class="outline-btn cta-outline">
+            Book Appointment
+          </button>
+
+        </a>
+
+      </div>
+
+    </div>
 
   </section>
 
@@ -418,50 +439,118 @@
 
   <footer class="footer" id="contact">
 
-    <div class="footer-container">
+    <div class="footer-top">
 
-      <!-- BOX -->
+      <div class="footer-brand">
 
-      <div class="footer-box">
+        <div class="footer-logo">
 
-        <h3>Stackly</h3>
+          <div class="footer-icon">
+            <i class="fa-solid fa-heart-pulse"></i>
+          </div>
+
+          <h2>Stackly</h2>
+
+        </div>
 
         <p>
 
-          Advanced healthcare solutions powered by
-          innovation, technology, and expert care.
+          Stackly Healthcare delivers advanced
+          medical solutions powered by AI,
+          expert specialists, smart patient care,
+          and innovative healthcare technologies.
 
         </p>
 
+        <div class="footer-contact">
+
+          <p>
+            <i class="fa-solid fa-phone"></i>
+            +91 9876543210
+          </p>
+
+          <p>
+            <i class="fa-solid fa-envelope"></i>
+            stacklyhealthcare@gmail.com
+          </p>
+
+          <p>
+            <i class="fa-solid fa-location-dot"></i>
+            Hyderabad, India
+          </p>
+
+        </div>
+
+        <div class="social-icons">
+
+          <a href="#">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+
+          <a href="#">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+
+          <a href="#">
+            <i class="fa-brands fa-twitter"></i>
+          </a>
+
+          <a href="#">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+
+        </div>
+
       </div>
 
-      <!-- BOX -->
-
-      <div class="footer-box">
+      <div class="footer-links">
 
         <h3>Quick Links</h3>
 
-        <p>Home</p>
-
-        <p>About</p>
-
-        <p>Services</p>
-
-        <p>Research</p>
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#services">Services</a>
+        <a href="#research">Research</a>
+        <a href="#blog">Blog</a>
 
       </div>
 
-      <!-- BOX -->
+      <div class="footer-links">
 
-      <div class="footer-box">
+        <h3>Healthcare Services</h3>
 
-        <h3>Contact</h3>
+        <a href="#">Emergency Care</a>
+        <a href="#">AI Diagnostics</a>
+        <a href="#">Expert Doctors</a>
+        <a href="#">Patient Monitoring</a>
+        <a href="#">Medical Research</a>
 
-        <p>Email: stackly@gmail.com</p>
+      </div>
 
-        <p>Phone: +91 9876543210</p>
+      <div class="footer-newsletter">
 
-        <p>Location: Hyderabad, India</p>
+        <h3>Newsletter</h3>
+
+        <p>
+
+          Subscribe to receive healthcare
+          updates, wellness tips, and latest
+          medical innovations.
+
+        </p>
+
+        <form>
+
+          <input type="email"
+            placeholder="Enter your email">
+
+          <button type="submit">
+
+            Subscribe
+
+          </button>
+
+        </form>
 
       </div>
 
@@ -469,27 +558,32 @@
 
     <div class="footer-bottom">
 
-      © 2025 Stackly Healthcare.
-      All Rights Reserved.
+      <p>
+        © 2025 Stackly Healthcare.
+        All Rights Reserved.
+      </p>
+
+      <p>
+        Designed By Stackly Team
+      </p>
 
     </div>
 
   </footer>
 
-  <!-- AOS SCRIPT -->
+  <!-- AOS -->
 
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
   <script>
 
     AOS.init({
-      duration:1200,
-      once:true
+      duration: 1200,
+      once: true
     });
 
-    // COUNTER ANIMATION
-
-    const counters = document.querySelectorAll('.counter');
+    const counters =
+      document.querySelectorAll('.counter');
 
     counters.forEach(counter => {
 
@@ -497,22 +591,23 @@
 
       const updateCounter = () => {
 
-        const target = +counter.getAttribute('data-target');
+        const target =
+          +counter.getAttribute('data-target');
 
         const c = +counter.innerText;
 
         const increment = target / 100;
 
-        if(c < target){
+        if (c < target) {
 
           counter.innerText =
-          `${Math.ceil(c + increment)}`;
+            `${Math.ceil(c + increment)}`;
 
-          setTimeout(updateCounter,20);
+          setTimeout(updateCounter, 20);
 
         }
 
-        else{
+        else {
 
           counter.innerText = target + '+';
 
@@ -527,4 +622,5 @@
   </script>
 
 </body>
+
 </html>
