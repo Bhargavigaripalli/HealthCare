@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -28,20 +28,29 @@
 <body>
 
   <!-- =========================
-       NAVBAR
-  ========================== -->
+     NAVBAR
+========================= -->
 
-  <nav class="navbar">
+<nav class="navbar">
 
-    <div class="logo">
+  <!-- LOGO -->
+  <div class="logo">
 
-      <div class="logo-icon">
-        <i class="fa-solid fa-heart-pulse"></i>
-      </div>
-
-      Stackly
-
+    <div class="logo-icon">
+      <i class="fa-solid fa-heart-pulse"></i>
     </div>
+
+    <span>Stackly</span>
+
+  </div>
+
+  <!-- HAMBURGER -->
+  <div class="menu-toggle" id="menuToggle">
+    <i class="fa-solid fa-bars"></i>
+  </div>
+
+  <!-- NAV MENU -->
+  <div class="nav-menu" id="navMenu">
 
     <ul class="nav-links">
 
@@ -59,27 +68,26 @@
 
     </ul>
 
+    <!-- MOBILE + DESKTOP BUTTONS -->
     <div class="nav-buttons">
 
       <a href="login.html">
-
         <button class="login-btn">
           Login
         </button>
-
       </a>
 
       <a href="register.html">
-
         <button class="start-btn">
           Get Started
         </button>
-
       </a>
 
     </div>
 
-  </nav>
+  </div>
+
+</nav>
 
   <!-- =========================
        HERO SECTION
@@ -581,6 +589,17 @@
       duration: 1200,
       once: true
     });
+     const menuToggle =
+    document.getElementById("menuToggle");
+
+  const navMenu =
+    document.getElementById("navMenu");
+
+  menuToggle.addEventListener("click", () => {
+
+    navMenu.classList.toggle("active");
+
+  });
 
     const counters =
       document.querySelectorAll('.counter');

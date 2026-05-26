@@ -1,4 +1,4 @@
- /* =========================
+  /* =========================
    GLOBAL STYLES
 ========================= */
 
@@ -22,34 +22,36 @@ body{
 
 .navbar{
 
+  position:fixed;
+  top:0;
+  left:0;
+
   width:100%;
+
+  padding:18px 7%;
 
   display:flex;
   justify-content:space-between;
   align-items:center;
 
-  padding:18px 8%;
+  background:rgba(255,255,255,0.95);
 
-  position:fixed;
-  top:0;
-  left:0;
+  backdrop-filter:blur(15px);
 
-  z-index:999;
+  z-index:1000;
 
-  background:rgba(255,255,255,0.75);
-
-  backdrop-filter:blur(18px);
-
-  box-shadow:0 5px 25px rgba(0,0,0,0.08);
+  box-shadow:0 4px 20px rgba(0,0,0,0.08);
 }
+
+/* LOGO */
 
 .logo{
 
   display:flex;
   align-items:center;
-  gap:10px;
+  gap:12px;
 
-  font-size:34px;
+  font-size:30px;
   font-weight:800;
 
   color:#0f172a;
@@ -57,8 +59,8 @@ body{
 
 .logo-icon{
 
-  width:42px;
-  height:42px;
+  width:45px;
+  height:45px;
 
   border-radius:50%;
 
@@ -69,13 +71,26 @@ body{
   background:linear-gradient(135deg,#0ea5e9,#38bdf8);
 
   color:white;
+
+  font-size:18px;
 }
+
+/* NAV MENU */
+
+.nav-menu{
+
+  display:flex;
+  align-items:center;
+  gap:40px;
+}
+
+/* NAV LINKS */
 
 .nav-links{
 
   display:flex;
   align-items:center;
-  gap:35px;
+  gap:30px;
 
   list-style:none;
 }
@@ -92,20 +107,23 @@ body{
 }
 
 .nav-links a:hover{
+
   color:#0ea5e9;
 }
 
+/* BUTTONS */
+
 .nav-buttons{
+
   display:flex;
+  align-items:center;
   gap:15px;
 }
 
 .login-btn,
-.start-btn,
-.hero-btn,
-.outline-btn{
+.start-btn{
 
-  padding:14px 28px;
+  padding:13px 28px;
 
   border:none;
 
@@ -123,17 +141,186 @@ body{
   background:white;
 
   color:#0ea5e9;
+
+  border:2px solid #0ea5e9;
 }
 
-.start-btn,
+.start-btn{
+
+  background:linear-gradient(135deg,#0ea5e9,#38bdf8);
+
+  color:white;
+
+  box-shadow:0 10px 20px rgba(14,165,233,0.25);
+}
+
+.login-btn:hover,
+.start-btn:hover{
+
+  transform:translateY(-4px);
+}
+
+/* HAMBURGER */
+
+.menu-toggle{
+
+  display:none;
+
+  font-size:28px;
+
+  cursor:pointer;
+
+  color:#0f172a;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+  .navbar{
+
+    padding:16px 20px;
+  }
+
+  .menu-toggle{
+
+    display:block;
+  }
+
+  .nav-menu{
+
+    position:absolute;
+
+    top:100%;
+    left:-100%;
+
+    width:100%;
+
+    background:white;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:25px;
+
+    padding:30px 20px;
+
+    transition:0.4s ease;
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+  }
+
+  .nav-menu.active{
+
+    left:0;
+  }
+
+  .nav-links{
+
+    flex-direction:column;
+
+    width:100%;
+
+    gap:22px;
+  }
+
+  .nav-links a{
+
+    font-size:17px;
+  }
+
+  .nav-buttons{
+
+    flex-direction:column;
+
+    width:100%;
+  }
+
+  .nav-buttons a{
+
+    width:100%;
+  }
+
+  .login-btn,
+  .start-btn{
+
+    width:100%;
+  }
+
+  .hero{
+
+    padding-top:150px;
+  }
+
+}
+
+/* SMALL MOBILE */
+
+@media(max-width:480px){
+
+  .logo{
+
+    font-size:24px;
+  }
+
+  .logo-icon{
+
+    width:40px;
+    height:40px;
+  }
+
+  .menu-toggle{
+
+    font-size:24px;
+  }
+
+}
+/* =========================
+   COMMON BUTTONS
+========================= */
+
+.hero-btn,
+.outline-btn{
+
+  padding:14px 30px;
+
+  border:none;
+
+  border-radius:50px;
+
+  font-size:16px;
+
+  font-weight:600;
+
+  cursor:pointer;
+
+  transition:0.4s ease;
+
+  text-decoration:none;
+}
+
+/* PRIMARY BUTTON */
+
 .hero-btn{
 
   background:linear-gradient(135deg,#0ea5e9,#38bdf8);
 
   color:white;
 
-  box-shadow:0 10px 25px rgba(14,165,233,0.3);
+  box-shadow:0 10px 25px rgba(14,165,233,0.25);
 }
+
+.hero-btn:hover{
+
+  transform:translateY(-5px);
+
+  box-shadow:0 15px 30px rgba(14,165,233,0.35);
+}
+
+/* OUTLINE BUTTON */
 
 .outline-btn{
 
@@ -144,12 +331,29 @@ body{
   color:#0ea5e9;
 }
 
-.login-btn:hover,
-.start-btn:hover,
-.hero-btn:hover,
 .outline-btn:hover{
 
+  background:#0ea5e9;
+
+  color:white;
+
   transform:translateY(-5px);
+}
+
+/* CTA WHITE BUTTON */
+
+.cta-outline{
+
+  border:2px solid white !important;
+
+  color:white !important;
+}
+
+.cta-outline:hover{
+
+  background:white !important;
+
+  color:#0ea5e9 !important;
 }
 
 /* =========================

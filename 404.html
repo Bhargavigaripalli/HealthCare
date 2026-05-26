@@ -9,42 +9,370 @@
 
   <title>404 - Stackly Healthcare</title>
 
-  <link rel="stylesheet" href="style.css">
+  <!-- GOOGLE FONT -->
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- FONT AWESOME -->
 
   <link rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+
+      min-height:100vh;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+
+      padding:20px;
+
+      background:
+      linear-gradient(rgba(15,23,42,0.92),
+      rgba(15,23,42,0.92)),
+      url('https://images.unsplash.com/photo-1586773860418-d37222d8fce3?q=80&w=1600&auto=format&fit=crop');
+
+      background-size:cover;
+      background-position:center;
+
+      overflow:hidden;
+    }
+
+    /* =========================
+       MAIN CONTAINER
+    ========================== */
+
+    .error-container{
+
+      width:100%;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    /* =========================
+       ERROR CARD
+    ========================== */
+
+    .error-card{
+
+      width:100%;
+      max-width:520px;
+
+      background:rgba(255,255,255,0.08);
+
+      backdrop-filter:blur(20px);
+
+      border:1px solid rgba(255,255,255,0.1);
+
+      border-radius:30px;
+
+      padding:45px 35px;
+
+      text-align:center;
+
+      color:white;
+
+      box-shadow:0 20px 50px rgba(0,0,0,0.35);
+
+      animation:fadeIn 1s ease;
+    }
+
+    /* =========================
+       ICON
+    ========================== */
+
+    .error-icon{
+
+      width:90px;
+      height:90px;
+
+      margin:0 auto 20px;
+
+      border-radius:50%;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+
+      background:
+      linear-gradient(135deg,#0ea5e9,#38bdf8);
+
+      font-size:38px;
+
+      color:white;
+
+      box-shadow:0 10px 25px rgba(14,165,233,0.4);
+    }
+
+    /* =========================
+       TEXT
+    ========================== */
+
+    .error-card h1{
+
+      font-size:110px;
+
+      line-height:1;
+
+      margin-bottom:10px;
+
+      color:#38bdf8;
+    }
+
+    .error-card h2{
+
+      font-size:34px;
+
+      margin-bottom:15px;
+    }
+
+    .error-card p{
+
+      font-size:16px;
+
+      line-height:1.8;
+
+      color:#cbd5e1;
+
+      margin-bottom:25px;
+    }
+
+    /* =========================
+       IMAGE
+    ========================== */
+
+    .error-card img{
+
+      width:180px;
+
+      margin-bottom:30px;
+
+      animation:float 3s ease-in-out infinite;
+    }
+
+    /* =========================
+       BUTTON
+    ========================== */
+
+    .back-home-btn{
+
+      padding:16px 35px;
+
+      border:none;
+
+      border-radius:50px;
+
+      background:
+      linear-gradient(135deg,#0ea5e9,#38bdf8);
+
+      color:white;
+
+      font-size:16px;
+
+      font-weight:600;
+
+      cursor:pointer;
+
+      transition:0.4s;
+
+      box-shadow:0 12px 25px rgba(14,165,233,0.3);
+    }
+
+    .back-home-btn:hover{
+
+      transform:translateY(-5px);
+
+      box-shadow:0 15px 35px rgba(14,165,233,0.5);
+    }
+
+    /* =========================
+       ANIMATION
+    ========================== */
+
+    @keyframes fadeIn{
+
+      from{
+        opacity:0;
+        transform:translateY(30px);
+      }
+
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+
+    }
+
+    @keyframes float{
+
+      0%{
+        transform:translateY(0px);
+      }
+
+      50%{
+        transform:translateY(-10px);
+      }
+
+      100%{
+        transform:translateY(0px);
+      }
+
+    }
+
+    /* =========================
+       TABLET
+    ========================== */
+
+    @media(max-width:768px){
+
+      .error-card{
+
+        padding:35px 25px;
+      }
+
+      .error-card h1{
+
+        font-size:85px;
+      }
+
+      .error-card h2{
+
+        font-size:28px;
+      }
+
+      .error-card p{
+
+        font-size:15px;
+      }
+
+      .error-card img{
+
+        width:150px;
+      }
+
+    }
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media(max-width:480px){
+
+      body{
+
+        padding:15px;
+      }
+
+      .error-card{
+
+        padding:30px 20px;
+
+        border-radius:22px;
+      }
+
+      .error-icon{
+
+        width:75px;
+        height:75px;
+
+        font-size:30px;
+      }
+
+      .error-card h1{
+
+        font-size:70px;
+      }
+
+      .error-card h2{
+
+        font-size:22px;
+      }
+
+      .error-card p{
+
+        font-size:14px;
+
+        margin-bottom:20px;
+      }
+
+      .error-card img{
+
+        width:120px;
+      }
+
+      .back-home-btn{
+
+        width:100%;
+
+        padding:14px;
+
+        font-size:15px;
+      }
+
+    }
+
+  </style>
 
 </head>
 
-<body class="error-body">
+<body>
+
+  <!-- =========================
+       ERROR PAGE
+  ========================== -->
 
   <div class="error-container">
 
     <div class="error-card">
 
+      <!-- ICON -->
+
       <div class="error-icon">
+
         <i class="fa-solid fa-heart-pulse"></i>
+
       </div>
+
+      <!-- TEXT -->
 
       <h1>404</h1>
 
       <h2>Oops! Page Not Found</h2>
 
       <p>
+
         The healthcare page you are looking for
         might have been removed or unavailable.
+
       </p>
 
+      <!-- IMAGE -->
+
       <img
-      src="https://cdn-icons-png.flaticon.com/512/2966/2966486.png"
-      alt="Hospital Error">
+        src="https://cdn-icons-png.flaticon.com/512/2966/2966486.png"
+        alt="Hospital Error">
+
+      <!-- BUTTON -->
 
       <a href="index.html">
 
         <button class="back-home-btn">
+
           Back To Home
+
         </button>
 
       </a>
@@ -54,4 +382,5 @@
   </div>
 
 </body>
+
 </html>
