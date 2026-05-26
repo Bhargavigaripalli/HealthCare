@@ -1,7 +1,7 @@
  /* ==========================================================================
    GLOBAL STYLES & LAYOUT SYSTEM
    ========================================================================== */
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -9,7 +9,7 @@
   scroll-behavior: smooth;
 }
 
-body{
+body {
   background: #f4f8fb;
   overflow-x: hidden;
   color: #0f172a;
@@ -17,25 +17,28 @@ body{
 }
 
 /* Base Wrapper Limiters for Crisp Look on Wide Desktop Displays */
-section, .footer-top, .footer-bottom {
+section, 
+.footer-top, 
+.footer-bottom {
   max-width: 1440px;
   margin-left: auto;
   margin-right: auto;
+  width: 100%;
+}
+
+section {
+  padding: 90px 8%;
 }
 
 /* ==========================================================================
-   NAVBAR (Pixel Perfect Design Fix)
+   NAVBAR (Pixel Perfect Desktop & Fluid Grid Layout Fix)
    ========================================================================== */
-.navbar{
+.navbar-wrapper {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 8%;
   background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
@@ -43,7 +46,18 @@ section, .footer-top, .footer-bottom {
   z-index: 1000;
 }
 
-.logo{
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Secure layout separation across widths */
+  align-items: center;
+  padding: 0 8%;
+  height: 85px;                  /* Hard locked height layout grid safety metric */
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.logo {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -51,9 +65,10 @@ section, .footer-top, .footer-bottom {
   font-weight: 700;
   color: #0f172a;
   text-decoration: none;
+  flex-shrink: 0;                /* Stops text from compressing awkwardly */
 }
 
-.logo-icon{
+.logo-icon {
   width: 44px;
   height: 44px;
   border-radius: 50%;
@@ -65,32 +80,35 @@ section, .footer-top, .footer-bottom {
   font-size: 18px;
 }
 
-.nav-menu{
+/* Unified right aligned structural element wrap block */
+.nav-menu {
   display: flex;
   align-items: center;
   gap: 40px;
 }
 
-.nav-links{
+.nav-links {
   display: flex;
   align-items: center;
   gap: 32px;
   list-style: none;
 }
 
-.nav-links li a{
+.nav-links li a {
   text-decoration: none;
   color: #334155;
   font-size: 15px;
   font-weight: 600;
   transition: color 0.3s ease;
+  white-space: nowrap;           /* Keeps text labels safe on one single horizontal row line */
 }
 
-.nav-links li a:hover{
+.nav-links li a:hover,
+.nav-links li a.active {
   color: #0ea5e9;
 }
 
-.nav-buttons{
+.nav-buttons {
   display: flex;
   align-items: center;
   gap: 15px;
@@ -100,7 +118,7 @@ section, .footer-top, .footer-bottom {
 .login-btn,
 .start-btn,
 .hero-btn,
-.outline-btn{
+.outline-btn {
   display: inline-block;
   text-decoration: none;
   text-align: center;
@@ -113,41 +131,41 @@ section, .footer-top, .footer-bottom {
   white-space: nowrap;
 }
 
-.login-btn{
+.login-btn {
   background: transparent;
   color: #0ea5e9;
   border: 2px solid #0ea5e9;
 }
 
-.login-btn:hover{
+.login-btn:hover {
   background: #0ea5e9;
   color: white;
   transform: translateY(-3px);
 }
 
-.start-btn{
+.start-btn {
   background: linear-gradient(135deg, #0ea5e9, #38bdf8);
   color: white;
   border: 2px solid transparent;
   box-shadow: 0 8px 20px rgba(14, 165, 233, 0.2);
 }
 
-.start-btn:hover{
+.start-btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 12px 24px rgba(14, 165, 233, 0.3);
 }
 
-.menu-toggle{
-  display: none;
+.menu-toggle {
+  display: none;                  /* Hidden layout fallback base for desktop environments */
   font-size: 26px;
   color: #0f172a;
   cursor: pointer;
 }
 
 /* ==========================================================================
-   HERO & SECTION LAYOUTS
+   HERO DISPLAY ARCHITECTURE
    ========================================================================== */
-.hero{
+.hero {
   min-height: 100vh;
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
@@ -157,7 +175,7 @@ section, .footer-top, .footer-bottom {
   background: linear-gradient(to right, #eff6ff, #f8fafc);
 }
 
-.hero-content h1{
+.hero-content h1 {
   font-size: 58px;
   font-weight: 800;
   line-height: 1.15;
@@ -165,18 +183,18 @@ section, .footer-top, .footer-bottom {
   margin: 20px 0;
 }
 
-.hero-content h1 span{
+.hero-content h1 span {
   color: #0ea5e9;
 }
 
-.hero-content p{
+.hero-content p {
   font-size: 18px;
   color: #475569;
   line-height: 1.8;
   margin-bottom: 35px;
 }
 
-.hero-tag{
+.hero-tag {
   display: inline-block;
   padding: 8px 18px;
   border-radius: 30px;
@@ -188,42 +206,42 @@ section, .footer-top, .footer-bottom {
   letter-spacing: 0.5px;
 }
 
-.hero-buttons{
+.hero-buttons {
   display: flex;
   gap: 16px;
 }
 
-.hero-btn{
+.hero-btn {
   background: linear-gradient(135deg, #0ea5e9, #38bdf8);
   color: white;
   padding: 13px 32px;
   box-shadow: 0 10px 25px rgba(14, 165, 233, 0.2);
 }
 
-.hero-btn:hover{
+.hero-btn:hover {
   transform: translateY(-4px);
   box-shadow: 0 15px 30px rgba(14, 165, 233, 0.35);
 }
 
-.outline-btn{
+.outline-btn {
   background: transparent;
   border: 2px solid #0ea5e9;
   color: #0ea5e9;
   padding: 11px 32px;
 }
 
-.outline-btn:hover{
+.outline-btn:hover {
   background: #0ea5e9;
   color: white;
   transform: translateY(-4px);
 }
 
-.hero-image{
+.hero-image {
   display: flex;
   justify-content: center;
 }
 
-.hero-image img{
+.hero-image img {
   width: 100%;
   max-width: 520px;
   border-radius: 35px;
@@ -232,18 +250,14 @@ section, .footer-top, .footer-bottom {
   transition: transform 0.4s ease;
 }
 
-.hero-image img:hover{
+.hero-image img:hover {
   transform: scale(1.02);
 }
 
 /* ==========================================================================
-   COMMON SECTIONS
+   COMMON SECTIONS SECTION TITLE HEADERS
    ========================================================================== */
-section{
-  padding: 90px 8%;
-}
-
-.section-title{
+.section-title {
   font-size: 42px;
   font-weight: 700;
   text-align: center;
@@ -251,7 +265,7 @@ section{
   color: #0f172a;
 }
 
-.section-subtitle{
+.section-subtitle {
   text-align: center;
   color: #64748b;
   margin-bottom: 60px;
@@ -259,36 +273,36 @@ section{
 }
 
 /* ==========================================================================
-   ABOUT & RESEARCH
+   ABOUT & RESEARCH ARCHITECTURE
    ========================================================================== */
-.about-section, .research-section{
+.about-section, .research-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
   align-items: center;
 }
 
-.about-image img, .research-image img{
+.about-image img, .research-image img {
   width: 100%;
   max-width: 520px;
   border-radius: 30px;
   box-shadow: 0 20px 40px rgba(0,0,0,0.06);
 }
 
-.about-content p, .research-content p{
+.about-content p, .research-content p {
   font-size: 17px;
   line-height: 1.8;
   color: #475569;
   margin: 25px 0;
 }
 
-.about-features{
+.about-features {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
 }
 
-.feature-box{
+.feature-box {
   padding: 18px;
   border-radius: 18px;
   background: white;
@@ -298,22 +312,35 @@ section{
   border: 1px solid #f1f5f9;
 }
 
-.feature-box:hover{
+.feature-box i {
+  color: #0ea5e9;
+  margin-right: 6px;
+}
+
+.feature-box:hover {
   transform: translateY(-4px);
   background: #0ea5e9;
   color: white;
 }
 
 /* ==========================================================================
-   SERVICES & BLOG
+   SERVICES & BLOG GRID COMPONENT
    ========================================================================== */
-.services-container{
+.services-container,
+.blog-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: 30px;
 }
 
-.service-card, .blog-card{
+.services-container {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.blog-container {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.service-card, .blog-card {
   background: white;
   border-radius: 24px;
   overflow: hidden;
@@ -322,85 +349,87 @@ section{
   border: 1px solid #f1f5f9;
 }
 
-.service-card:hover, .blog-card:hover{
+.service-card:hover, .blog-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 22px 45px rgba(0, 0, 0, 0.08);
 }
 
-.service-card img, .blog-card img{
+.service-img-wrapper,
+.blog-img-wrapper {
   width: 100%;
   height: 230px;
+  overflow: hidden;
+}
+
+.service-card img, .blog-card img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
-.service-card h3{
+.service-card h3, .blog-content h3 {
   font-size: 24px;
-  padding: 25px 25px 10px;
   color: #0f172a;
 }
 
-.service-card p{
+.service-card h3 {
+  padding: 25px 25px 10px;
+}
+
+.service-card p {
   padding: 0 25px 30px;
   color: #64748b;
   line-height: 1.6;
   font-size: 15px;
 }
 
-.blog-container{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 35px;
-}
-
-.blog-content{
+.blog-content {
   padding: 30px;
 }
 
-.blog-content h3{
-  font-size: 24px;
+.blog-content h3 {
   margin-bottom: 12px;
-  color: #0f172a;
 }
 
-.blog-content p{
+.blog-content p {
   color: #64748b;
   line-height: 1.7;
   font-size: 15px;
 }
 
 /* ==========================================================================
-   STATS SECTION
+   STATS COUTER MODULE
    ========================================================================== */
-.stats-section{
+.stats-section {
   background: linear-gradient(135deg, #0ea5e9, #0284c7);
   border-radius: 30px;
   margin: 60px 8%;
   padding: 60px 4%;
 }
 
-.stats-container{
+.stats-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
   text-align: center;
 }
 
-.stat-box h2{
+.stat-box h2 {
   font-size: 52px;
   font-weight: 800;
   color: white;
   margin-bottom: 8px;
 }
 
-.stat-box p{
+.stat-box p {
   font-size: 17px;
   color: #e0f2fe;
 }
 
 /* ==========================================================================
-   CTA SECTION
+   CTA MODULE BANNER
    ========================================================================== */
-.cta-section{
+.cta-section {
   position: relative;
   background: linear-gradient(135deg, #0f172a, #1e293b);
   padding: 100px 8%;
@@ -410,59 +439,59 @@ section{
   margin: 60px 8%;
 }
 
-.cta-content{
+.cta-content {
   position: relative;
   z-index: 2;
   max-width: 750px;
   margin: 0 auto;
 }
 
-.cta-tag{
+.cta-tag {
   color: #38bdf8;
   font-size: 14px;
   font-weight: 700;
   letter-spacing: 1px;
 }
 
-.cta-content h2{
+.cta-content h2 {
   font-size: 40px;
   color: white;
   margin: 20px 0;
 }
 
-.cta-content p{
+.cta-content p {
   color: #cbd5e1;
   font-size: 17px;
   line-height: 1.8;
   margin-bottom: 35px;
 }
 
-.cta-buttons{
+.cta-buttons {
   display: flex;
   gap: 15px;
   justify-content: center;
 }
 
-.cta-outline{
+.cta-outline {
   border-color: #ffffff;
   color: #ffffff;
 }
 
-.cta-outline:hover{
+.cta-outline:hover {
   background: #ffffff;
   color: #0f172a;
 }
 
 /* ==========================================================================
-   FOOTER SECTION
+   FOOTER SCHEMES
    ========================================================================== */
-.footer{
+.footer {
   background: linear-gradient(135deg, #020617, #0f172a);
   color: white;
   padding: 80px 8% 30px;
 }
 
-.footer-top{
+.footer-top {
   display: grid;
   grid-template-columns: 1.3fr 0.8fr 0.9fr 1fr;
   gap: 50px;
@@ -470,14 +499,14 @@ section{
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.footer-logo{
+.footer-logo {
   display: flex;
   align-items: center;
   gap: 12px;
   margin-bottom: 20px;
 }
 
-.footer-icon{
+.footer-icon {
   width: 44px;
   height: 44px;
   border-radius: 50%;
@@ -489,36 +518,36 @@ section{
   color: white;
 }
 
-.footer-logo h2{
+.footer-logo h2 {
   font-size: 30px;
   font-weight: 800;
 }
 
-.footer-brand p{
+.footer-brand p {
   color: #94a3b8;
   line-height: 1.8;
   font-size: 15px;
   margin-bottom: 20px;
 }
 
-.footer-contact p{
+.footer-contact p {
   font-size: 14px;
   color: #cbd5e1;
   margin-bottom: 10px;
 }
 
-.footer-contact i{
+.footer-contact i {
   margin-right: 8px;
   color: #38bdf8;
 }
 
-.social-icons{
+.social-icons {
   display: flex;
   gap: 12px;
   margin-top: 20px;
 }
 
-.social-icons a{
+.social-icons a {
   width: 36px;
   height: 36px;
   background: rgba(255,255,255,0.05);
@@ -531,24 +560,24 @@ section{
   transition: 0.3s;
 }
 
-.social-icons a:hover{
+.social-icons a:hover {
   background: #0ea5e9;
   transform: translateY(-3px);
 }
 
-.footer-links{
+.footer-links {
   display: flex;
   flex-direction: column;
 }
 
-.footer-links h3, .footer-newsletter h3{
+.footer-links h3, .footer-newsletter h3 {
   font-size: 20px;
   margin-bottom: 20px;
   font-weight: 700;
   color: white;
 }
 
-.footer-links a{
+.footer-links a {
   text-decoration: none;
   color: #94a3b8;
   margin-bottom: 14px;
@@ -557,24 +586,24 @@ section{
   display: inline-block;
 }
 
-.footer-links a:hover{
+.footer-links a:hover {
   color: #38bdf8;
   transform: translateX(5px);
 }
 
-.footer-newsletter p{
+.footer-newsletter p {
   color: #94a3b8;
   font-size: 14px;
   line-height: 1.7;
   margin-bottom: 20px;
 }
 
-.footer-newsletter form{
+.newsletter-form {
   display: flex;
   gap: 8px;
 }
 
-.footer-newsletter input{
+.footer-newsletter input {
   flex: 1;
   padding: 12px 16px;
   border-radius: 30px;
@@ -585,7 +614,7 @@ section{
   font-size: 14px;
 }
 
-.footer-newsletter button{
+.footer-newsletter button {
   padding: 12px 22px;
   border-radius: 30px;
   border: none;
@@ -596,11 +625,11 @@ section{
   transition: 0.3s;
 }
 
-.footer-newsletter button:hover{
+.footer-newsletter button:hover {
   background: #38bdf8;
 }
 
-.footer-bottom{
+.footer-bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -610,10 +639,10 @@ section{
 }
 
 /* ==========================================================================
-   LAPTOP LAYER OPTIMIZATIONS (Up to 1024px)
+   LAPTOP LAYER SCALE INTERFACES BREAKPOINT (Up to 1024px)
    ========================================================================== */
 @media (max-width: 1024px) {
-  .navbar { padding: 16px 4%; }
+  .navbar { padding: 0 4%; }
   section { padding: 70px 4%; }
   .hero { padding: 130px 4% 60px; gap: 40px; }
   .hero-content h1 { font-size: 44px; }
@@ -623,36 +652,44 @@ section{
 }
 
 /* ==========================================================================
-   MOBILE DROPDOWN OVERLAY RE-ENGINEERING (Up to 768px)
+   MOBILE SCREEN DROPDOWN ARCHITECTURE REFIXES (Up to 768px Viewports)
    ========================================================================== */
 @media (max-width: 768px) {
   .menu-toggle {
-    display: block;
+    display: block;               /* Triggers hamburger interface icon */
   }
 
-  /* Structural Fix: Re-positioned as hidden screen overlay block */
+  .navbar {
+    height: 75px;
+    padding: 0 5%;
+  }
+
+  /* Fixed background block stops overlay container breaks */
   .nav-menu {
-    position: absolute;
-    top: 100%;
+    position: fixed;
+    top: 75px;                  /* Anchors below header height limit baseline */
     left: 0;
     width: 100%;
+    height: calc(100vh - 75px);
     background: #ffffff;
     flex-direction: column;
-    align-items: stretch;
-    gap: 30px;
-    padding: 35px 6%;
-    box-shadow: 0 20px 30px rgba(0,0,0,0.08);
+    justify-content: flex-start;
+    align-items: center;
+    gap: 35px;
+    padding: 40px 6%;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.05);
     border-top: 1px solid #f1f5f9;
     
-    /* Transform Layer Mixin Fixes the Dropdown Leak Error */
+    /* Smooth CSS Acceleration Transitions Drawer Settings */
     opacity: 0;
     visibility: hidden;
     transform: translateY(-15px);
-    transition: all 0.4s cubic-bezier(0.1, 1, 0.1, 1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     pointer-events: none;
+    overflow-y: auto;
   }
 
-  /* JavaScript Hook Class to Expand Dropdown */
+  /* JavaScript Hook activation toggle rules styling */
   .nav-menu.active {
     opacity: 1;
     visibility: visible;
@@ -662,13 +699,19 @@ section{
 
   .nav-links {
     flex-direction: column;
-    gap: 20px;
+    gap: 25px;
     width: 100%;
   }
 
   .nav-links li {
     width: 100%;
     text-align: center;
+  }
+
+  .nav-links li a {
+    font-size: 18px;
+    display: block;
+    padding: 8px 0;
   }
 
   .nav-buttons {
@@ -683,35 +726,38 @@ section{
     padding: 13px;
   }
 
-  /* Section Transformation blocks to single-column layers */
+  /* Resets Grid Rows blocks into singular centered blocks stacked layout */
   .hero {
     grid-template-columns: 1fr;
     text-align: center;
-    padding-top: 130px;
+    padding-top: 120px;
     gap: 40px;
   }
 
   .hero-buttons { justify-content: center; }
   .about-section, .research-section { grid-template-columns: 1fr; gap: 40px; }
   
-  /* UX Image Position Alignment Fix */
+  /* Logically shifts media components downwards beneath header copy content */
   .about-image { order: -1; }
   .about-image, .research-image { display: flex; justify-content: center; }
 
   .services-container, .blog-container, .footer-top { grid-template-columns: 1fr; }
-  .stats-container { grid-template-columns: repeat(2, 1fr); gap: 20px; }
-  .cta-buttons { flex-direction: column; width: 100%; max-width: 300px; margin: 0 auto; }
+  .stats-container { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .cta-buttons { flex-direction: column; width: 100%; max-width: 320px; margin: 0 auto; }
 }
 
 /* ==========================================================================
-   SMALL PHONE SCREEN OPTIMIZATIONS (Up to 480px)
+   MINI VERTICAL SMARTPHONE DISPLAY SCALES (Up to 480px Viewports)
    ========================================================================== */
 @media (max-width: 480px) {
   .logo { font-size: 24px; }
   .logo-icon { width: 38px; height: 38px; font-size: 16px; }
   .hero-content h1 { font-size: 34px; }
+  .hero-buttons { flex-direction: column; width: 100%; }
+  .hero-btn, .outline-btn { width: 100%; text-align: center; }
   .section-title { font-size: 30px; }
   .about-features, .stats-container { grid-template-columns: 1fr; }
-  .footer-newsletter form { flex-direction: column; }
-  .footer-bottom { flex-direction: column; text-align: center; gap: 12px; }
+  .newsletter-form { flex-direction: column; gap: 12px; }
+  .footer-newsletter button { width: 100%; border-radius: 30px; }
+  .footer-bottom { flex-direction: column; text-align: center; gap: 15px; }
 }

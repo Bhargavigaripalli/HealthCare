@@ -6,43 +6,42 @@
   <title>Stackly Healthcare</title>
 
   <link rel="stylesheet" href="style.css">
-
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
 
-  <nav class="navbar">
-    <a href="#home" class="logo">
-      <div class="logo-icon">
-        <i class="fa-solid fa-heart-pulse"></i>
+  <header class="navbar-wrapper">
+    <nav class="navbar">
+      <a href="#home" class="logo">
+        <div class="logo-icon">
+          <i class="fa-solid fa-heart-pulse"></i>
+        </div>
+        <span>Stackly</span>
+      </a>
+
+      <div class="menu-toggle" id="menuToggle">
+        <i class="fa-solid fa-bars"></i>
       </div>
-      <span>Stackly</span>
-    </a>
 
-    <div class="menu-toggle" id="menuToggle">
-      <i class="fa-solid fa-bars"></i>
-    </div>
+      <div class="nav-menu" id="navMenu">
+        <ul class="nav-links">
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
 
-    <div class="nav-menu" id="navMenu">
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#research">Research</a></li>
-        <li><a href="#blog">Blog</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-
-      <div class="nav-buttons">
-        <a href="login.html" class="login-btn">Login</a>
-        <a href="register.html" class="start-btn">Get Started</a>
+        <div class="nav-buttons">
+          <a href="login.html" class="login-btn">Login</a>
+          <a href="register.html" class="start-btn">Get Started</a>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </header>
 
   <section class="hero" id="home">
     <div class="hero-content" data-aos="fade-right">
@@ -75,10 +74,10 @@
         doctors, and healthcare facilities through intelligent digital systems.
       </p>
       <div class="about-features">
-        <div class="feature-box">✓ Smart Medical Systems</div>
-        <div class="feature-box">✓ Expert Doctors</div>
-        <div class="feature-box">✓ AI Diagnostics</div>
-        <div class="feature-box">✓ 24/7 Emergency Support</div>
+        <div class="feature-box"><i class="fa-solid fa-circle-check"></i> Smart Medical Systems</div>
+        <div class="feature-box"><i class="fa-solid fa-circle-check"></i> Expert Doctors</div>
+        <div class="feature-box"><i class="fa-solid fa-circle-check"></i> AI Diagnostics</div>
+        <div class="feature-box"><i class="fa-solid fa-circle-check"></i> 24/7 Emergency Support</div>
       </div>
     </div>
   </section>
@@ -89,19 +88,25 @@
 
     <div class="services-container">
       <div class="service-card" data-aos="zoom-in">
-        <img src="https://www.cdi.org.in/images/home/4e23c321-9559-413a-a4cd-c948b9d6eb92_1743232868.jpg" alt="Emergency Care">
+        <div class="service-img-wrapper">
+          <img src="https://www.cdi.org.in/images/home/4e23c321-9559-413a-a4cd-c948b9d6eb92_1743232868.jpg" alt="Emergency Care">
+        </div>
         <h3>Emergency Care</h3>
         <p>24/7 emergency medical support with rapid treatment.</p>
       </div>
 
       <div class="service-card" data-aos="zoom-in">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSClvRaODsigbX8UkjeXU0ZgXWpeKm6IyMumg&s" alt="Medical Research">
+        <div class="service-img-wrapper">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSClvRaODsigbX8UkjeXU0ZgXWpeKm6IyMumg&s" alt="Medical Research">
+        </div>
         <h3>Medical Research</h3>
         <p>AI-powered healthcare research and innovation.</p>
       </div>
 
       <div class="service-card" data-aos="zoom-in">
-        <img src="https://www.drmaidhospital.in/wp-content/uploads/2021/12/Importance-of-Multispecialty-Hospital.jpg" alt="Expert Specialists">
+        <div class="service-img-wrapper">
+          <img src="https://www.drmaidhospital.in/wp-content/uploads/2021/12/Importance-of-Multispecialty-Hospital.jpg" alt="Expert Specialists">
+        </div>
         <h3>Expert Specialists</h3>
         <p>Highly experienced doctors with modern expertise.</p>
       </div>
@@ -149,7 +154,9 @@
 
     <div class="blog-container">
       <div class="blog-card" data-aos="fade-up">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSClvRaODsigbX8UkjeXU0ZgXWpeKm6IyMumg&s" alt="AI Blog">
+        <div class="blog-img-wrapper">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSClvRaODsigbX8UkjeXU0ZgXWpeKm6IyMumg&s" alt="AI Blog">
+        </div>
         <div class="blog-content">
           <h3>Future Of AI In Healthcare</h3>
           <p>Discover how artificial intelligence is transforming patient care.</p>
@@ -157,7 +164,9 @@
       </div>
 
       <div class="blog-card" data-aos="fade-up">
-        <img src="https://www.drmaidhospital.in/wp-content/uploads/2021/12/Importance-of-Multispecialty-Hospital.jpg" alt="Hospital Tech Blog">
+        <div class="blog-img-wrapper">
+          <img src="https://www.drmaidhospital.in/wp-content/uploads/2021/12/Importance-of-Multispecialty-Hospital.jpg" alt="Hospital Tech Blog">
+        </div>
         <div class="blog-content">
           <h3>Smart Hospital Technologies</h3>
           <p>Learn about the latest advancements in healthcare systems.</p>
@@ -229,7 +238,7 @@
       <div class="footer-newsletter">
         <h3>Newsletter</h3>
         <p>Subscribe to receive healthcare updates, wellness tips, and latest medical innovations.</p>
-        <form onsubmit="event.preventDefault();">
+        <form onsubmit="event.preventDefault();" class="newsletter-form">
           <input type="email" placeholder="Enter your email" required>
           <button type="submit">Subscribe</button>
         </form>
@@ -256,7 +265,6 @@
 
     menuToggle.addEventListener("click", () => {
       navMenu.classList.toggle("active");
-      // Optional toggle icon style switch
       const icon = menuToggle.querySelector("i");
       if(navMenu.classList.contains("active")) {
         icon.classList.remove("fa-bars");
@@ -267,16 +275,17 @@
       }
     });
 
-    // Automatically close the dropdown block when clicking any single target link
+    // Automatically close drawer when clicking individual menu links
     navLinks.forEach(link => {
       link.addEventListener("click", () => {
         navMenu.classList.remove("active");
-        menuToggle.querySelector("i").classList.remove("fa-xmark");
-        menuToggle.querySelector("i").classList.add("fa-bars");
+        const icon = menuToggle.querySelector("i");
+        icon.classList.remove("fa-xmark");
+        icon.classList.add("fa-bars");
       });
     });
 
-    // Counter Increment Hook Animation Logic
+    // Counter Increment Animation Logic
     const counters = document.querySelectorAll('.counter');
     counters.forEach(counter => {
       counter.innerText = '0';
