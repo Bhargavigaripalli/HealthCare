@@ -30,8 +30,11 @@
         </div>
         <span>Stackly</span>
       </a>
-
-      <div class="menu-toggle" id="menuToggle">
+ <div
+  class="menu-toggle"
+  id="menuToggle"
+  aria-label="Open Menu"
+>
         <i class="fa-solid fa-bars"></i>
       </div>
 
@@ -492,84 +495,147 @@
   </footer>
 
   <!-- ================= SCRIPTS ================= -->
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+ <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
-  <script>
+<script>
 
-    AOS.init({
-      duration: 1000,
-      once: true
+  AOS.init({
+    duration: 1000,
+    once: true
+  });
+
+  /* =========================
+     MOBILE MENU
+  ========================= */
+
+  const menuToggle =
+  document.getElementById("menuToggle");
+
+  const navMenu =
+  document.getElementById("navMenu");
+
+  const navLinks =
+  document.querySelectorAll(".nav-links li a");
+
+  menuToggle.addEventListener("click", () => {
+
+    navMenu.classList.toggle("active");
+
+    const icon =
+    menuToggle.querySelector("i");
+
+    if(navMenu.classList.contains("active")){
+
+      icon.classList.remove("fa-bars");
+      icon.classList.add("fa-xmark");
+
+      document.body.style.overflow = "hidden";
+
+    } else {
+
+      icon.classList.remove("fa-xmark");
+      icon.classList.add("fa-bars");
+
+      document.body.style.overflow = "auto";
+
+    }
+
+  });
+
+  /* =========================
+     CLOSE MENU ON LINK CLICK
+  ========================= */
+
+  navLinks.forEach(link => {
+
+    link.addEventListener("click", () => {
+
+      navMenu.classList.remove("active");
+
+      const icon =
+      menuToggle.querySelector("i");
+
+      icon.classList.remove("fa-xmark");
+      icon.classList.add("fa-bars");
+
+      document.body.style.overflow = "auto";
+
     });
 
-    // MOBILE MENU
-    const menuToggle = document.getElementById("menuToggle");
-    const navMenu = document.getElementById("navMenu");
-    const navLinks = document.querySelectorAll(".nav-links li a");
+  });
 
-    menuToggle.addEventListener("click", () => {
+  /* =========================
+     CLOSE MENU WHEN CLICK OUTSIDE
+  ========================= */
 
-      navMenu.classList.toggle("active");
+  document.addEventListener("click", (e) => {
 
-      const icon = menuToggle.querySelector("i");
+    const isInsideMenu =
+      navMenu.contains(e.target) ||
+      menuToggle.contains(e.target);
 
-      if (navMenu.classList.contains("active")) {
-        icon.classList.remove("fa-bars");
-        icon.classList.add("fa-xmark");
+    if(
+      !isInsideMenu &&
+      navMenu.classList.contains("active")
+    ){
+
+      navMenu.classList.remove("active");
+
+      const icon =
+      menuToggle.querySelector("i");
+
+      icon.classList.remove("fa-xmark");
+      icon.classList.add("fa-bars");
+
+      document.body.style.overflow = "auto";
+
+    }
+
+  });
+
+  /* =========================
+     COUNTER ANIMATION
+  ========================= */
+
+  const counters =
+  document.querySelectorAll(".counter");
+
+  counters.forEach(counter => {
+
+    counter.innerText = "0";
+
+    const updateCounter = () => {
+
+      const target =
+      +counter.getAttribute("data-target");
+
+      const current =
+      +counter.innerText;
+
+      const increment =
+      Math.ceil(target / 100);
+
+      if(current < target){
+
+        counter.innerText =
+        current + increment;
+
+        setTimeout(updateCounter, 20);
+
       } else {
-        icon.classList.remove("fa-xmark");
-        icon.classList.add("fa-bars");
+
+        counter.innerText =
+        target + "+";
+
       }
 
-    });
+    };
 
-    // CLOSE MOBILE MENU ON LINK CLICK
-    navLinks.forEach(link => {
+    updateCounter();
 
-      link.addEventListener("click", () => {
+  });
 
-        navMenu.classList.remove("active");
-
-        const icon = menuToggle.querySelector("i");
-
-        icon.classList.remove("fa-xmark");
-        icon.classList.add("fa-bars");
-
-      });
-
-    });
-
-    // COUNTER ANIMATION
-    const counters = document.querySelectorAll('.counter');
-
-    counters.forEach(counter => {
-
-      counter.innerText = '0';
-
-      const updateCounter = () => {
-
-        const target = +counter.getAttribute('data-target');
-        const c = +counter.innerText;
-        const increment = target / 100;
-
-        if (c < target) {
-
-          counter.innerText = `${Math.ceil(c + increment)}`;
-
-          setTimeout(updateCounter, 20);
-
-        } else {
-
-          counter.innerText = target + '+';
-
-        }
-
-      };
-
-      updateCounter();
-
-    });
-
-  </script>
+</script>
 
 </body>
 </html>

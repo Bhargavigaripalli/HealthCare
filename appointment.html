@@ -31,6 +31,56 @@
       background:#f1f5f9;
       min-height:100vh;
       padding:40px 6%;
+      overflow-x:hidden;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    /* =========================
+       SUCCESS MESSAGE
+    ========================= */
+
+    .success-message{
+
+      position:fixed;
+
+      top:20px;
+      right:20px;
+
+      background:#10b981;
+
+      color:white;
+
+      padding:16px 24px;
+
+      border-radius:14px;
+
+      font-weight:600;
+
+      box-shadow:0 10px 25px rgba(0,0,0,0.15);
+
+      display:none;
+
+      z-index:2000;
+
+      animation:slideIn 0.4s ease;
+    }
+
+    @keyframes slideIn{
+
+      from{
+        opacity:0;
+        transform:translateX(80px);
+      }
+
+      to{
+        opacity:1;
+        transform:translateX(0);
+      }
+
     }
 
     /* =========================
@@ -159,7 +209,7 @@
 
       border:6px solid white;
 
-      margin-top:-65px;
+      margin: -65px auto 0;
 
       background:white;
     }
@@ -197,8 +247,21 @@
       padding:0 25px 30px;
     }
 
+    .appointment-form label{
+
+      text-align:left;
+
+      font-size:14px;
+
+      font-weight:600;
+
+      color:#334155;
+    }
+
     .appointment-form input,
     .appointment-form select{
+
+      width:100%;
 
       padding:14px 16px;
 
@@ -221,6 +284,17 @@
       border-color:#0ea5e9;
 
       box-shadow:0 0 10px rgba(14,165,233,0.2);
+    }
+
+    .error-text{
+
+      color:#ef4444;
+
+      font-size:13px;
+
+      text-align:left;
+
+      display:none;
     }
 
     /* =========================
@@ -342,6 +416,14 @@
         width:100%;
       }
 
+      .success-message{
+
+        left:10px;
+        right:10px;
+
+        text-align:center;
+      }
+
     }
 
   </style>
@@ -349,6 +431,16 @@
 </head>
 
 <body>
+
+  <!-- SUCCESS MESSAGE -->
+
+  <div
+    class="success-message"
+    id="successMessage">
+
+    Appointment Booked Successfully
+
+  </div>
 
   <!-- TOP BAR -->
 
@@ -366,7 +458,9 @@
 
     </div>
 
-    <button class="logout-btn" onclick="logout()">
+    <button
+      class="logout-btn"
+      onclick="logout()">
 
       Logout
 
@@ -378,7 +472,7 @@
 
   <div class="doctor-container">
 
-    <!-- Doctor 1 -->
+    <!-- CARD 1 -->
 
     <div class="doctor-card">
 
@@ -386,42 +480,54 @@
 
       <img
         src="./images/Doctorfemale.webp"
-        alt="Doctor Sarah">
+        alt="Dr Sarah Johnson">
 
       <h3>Dr. Sarah Johnson</h3>
 
       <h4>Cardiologist</h4>
 
-      <div class="appointment-form">
+      <form class="appointment-form">
+
+        <label for="date1">Select Date</label>
 
         <input
           type="date"
           id="date1"
-          name="date1">
+          name="date1"
+          required>
+
+        <label for="time1">Select Time</label>
 
         <select
           id="time1"
-          name="time1">
+          name="time1"
+          required>
 
-          <option>Select Time</option>
+          <option value="">Select Time</option>
 
-          <option>09:00 AM</option>
+          <option value="09:00 AM">09:00 AM</option>
 
-          <option>10:00 AM</option>
+          <option value="10:00 AM">10:00 AM</option>
 
         </select>
 
-        <button class="hero-btn book-btn">
+        <p class="error-text">
+          Please select date and time
+        </p>
+
+        <button
+          type="submit"
+          class="hero-btn">
 
           Book Slot
 
         </button>
 
-      </div>
+      </form>
 
     </div>
 
-    <!-- Doctor 2 -->
+    <!-- CARD 2 -->
 
     <div class="doctor-card">
 
@@ -429,42 +535,54 @@
 
       <img
         src="./images/Doctormale.webp"
-        alt="Doctor Michael">
+        alt="Dr Michael Lee">
 
       <h3>Dr. Michael Lee</h3>
 
       <h4>Neurologist</h4>
 
-      <div class="appointment-form">
+      <form class="appointment-form">
+
+        <label for="date2">Select Date</label>
 
         <input
           type="date"
           id="date2"
-          name="date2">
+          name="date2"
+          required>
+
+        <label for="time2">Select Time</label>
 
         <select
           id="time2"
-          name="time2">
+          name="time2"
+          required>
 
-          <option>Select Time</option>
+          <option value="">Select Time</option>
 
-          <option>11:00 AM</option>
+          <option value="11:00 AM">11:00 AM</option>
 
-          <option>12:00 PM</option>
+          <option value="12:00 PM">12:00 PM</option>
 
         </select>
 
-        <button class="hero-btn book-btn">
+        <p class="error-text">
+          Please select date and time
+        </p>
+
+        <button
+          type="submit"
+          class="hero-btn">
 
           Book Slot
 
         </button>
 
-      </div>
+      </form>
 
     </div>
 
-    <!-- Doctor 3 -->
+    <!-- CARD 3 -->
 
     <div class="doctor-card">
 
@@ -472,42 +590,54 @@
 
       <img
         src="./images/Doctorfemale.webp"
-        alt="Doctor Emily">
+        alt="Dr Emily Davis">
 
       <h3>Dr. Emily Davis</h3>
 
       <h4>Pediatrician</h4>
 
-      <div class="appointment-form">
+      <form class="appointment-form">
+
+        <label for="date3">Select Date</label>
 
         <input
           type="date"
           id="date3"
-          name="date3">
+          name="date3"
+          required>
+
+        <label for="time3">Select Time</label>
 
         <select
           id="time3"
-          name="time3">
+          name="time3"
+          required>
 
-          <option>Select Time</option>
+          <option value="">Select Time</option>
 
-          <option>01:00 PM</option>
+          <option value="01:00 PM">01:00 PM</option>
 
-          <option>02:00 PM</option>
+          <option value="02:00 PM">02:00 PM</option>
 
         </select>
 
-        <button class="hero-btn book-btn">
+        <p class="error-text">
+          Please select date and time
+        </p>
+
+        <button
+          type="submit"
+          class="hero-btn">
 
           Book Slot
 
         </button>
 
-      </div>
+      </form>
 
     </div>
 
-    <!-- Doctor 4 -->
+    <!-- CARD 4 -->
 
     <div class="doctor-card">
 
@@ -515,42 +645,54 @@
 
       <img
         src="./images/Doctormale.webp"
-        alt="Doctor Robert">
+        alt="Dr Robert Smith">
 
       <h3>Dr. Robert Smith</h3>
 
       <h4>Orthopedic</h4>
 
-      <div class="appointment-form">
+      <form class="appointment-form">
+
+        <label for="date4">Select Date</label>
 
         <input
           type="date"
           id="date4"
-          name="date4">
+          name="date4"
+          required>
+
+        <label for="time4">Select Time</label>
 
         <select
           id="time4"
-          name="time4">
+          name="time4"
+          required>
 
-          <option>Select Time</option>
+          <option value="">Select Time</option>
 
-          <option>03:00 PM</option>
+          <option value="03:00 PM">03:00 PM</option>
 
-          <option>04:00 PM</option>
+          <option value="04:00 PM">04:00 PM</option>
 
         </select>
 
-        <button class="hero-btn book-btn">
+        <p class="error-text">
+          Please select date and time
+        </p>
+
+        <button
+          type="submit"
+          class="hero-btn">
 
           Book Slot
 
         </button>
 
-      </div>
+      </form>
 
     </div>
 
-    <!-- Doctor 5 -->
+    <!-- CARD 5 -->
 
     <div class="doctor-card">
 
@@ -558,42 +700,54 @@
 
       <img
         src="./images/Doctorfemale.webp"
-        alt="Doctor Olivia">
+        alt="Dr Olivia Brown">
 
       <h3>Dr. Olivia Brown</h3>
 
       <h4>Dermatologist</h4>
 
-      <div class="appointment-form">
+      <form class="appointment-form">
+
+        <label for="date5">Select Date</label>
 
         <input
           type="date"
           id="date5"
-          name="date5">
+          name="date5"
+          required>
+
+        <label for="time5">Select Time</label>
 
         <select
           id="time5"
-          name="time5">
+          name="time5"
+          required>
 
-          <option>Select Time</option>
+          <option value="">Select Time</option>
 
-          <option>05:00 PM</option>
+          <option value="05:00 PM">05:00 PM</option>
 
-          <option>06:00 PM</option>
+          <option value="06:00 PM">06:00 PM</option>
 
         </select>
 
-        <button class="hero-btn book-btn">
+        <p class="error-text">
+          Please select date and time
+        </p>
+
+        <button
+          type="submit"
+          class="hero-btn">
 
           Book Slot
 
         </button>
 
-      </div>
+      </form>
 
     </div>
 
-    <!-- Doctor 6 -->
+    <!-- CARD 6 -->
 
     <div class="doctor-card">
 
@@ -601,42 +755,54 @@
 
       <img
         src="./images/Doctormale.webp"
-        alt="Doctor James">
+        alt="Dr James Wilson">
 
       <h3>Dr. James Wilson</h3>
 
       <h4>ENT Specialist</h4>
 
-      <div class="appointment-form">
+      <form class="appointment-form">
+
+        <label for="date6">Select Date</label>
 
         <input
           type="date"
           id="date6"
-          name="date6">
+          name="date6"
+          required>
+
+        <label for="time6">Select Time</label>
 
         <select
           id="time6"
-          name="time6">
+          name="time6"
+          required>
 
-          <option>Select Time</option>
+          <option value="">Select Time</option>
 
-          <option>09:30 AM</option>
+          <option value="09:30 AM">09:30 AM</option>
 
-          <option>10:30 AM</option>
+          <option value="10:30 AM">10:30 AM</option>
 
         </select>
 
-        <button class="hero-btn book-btn">
+        <p class="error-text">
+          Please select date and time
+        </p>
+
+        <button
+          type="submit"
+          class="hero-btn">
 
           Book Slot
 
         </button>
 
-      </div>
+      </form>
 
     </div>
 
-    <!-- Doctor 7 -->
+    <!-- CARD 7 -->
 
     <div class="doctor-card">
 
@@ -644,42 +810,54 @@
 
       <img
         src="./images/Doctorfemale.webp"
-        alt="Doctor Sophia">
+        alt="Dr Sophia Miller">
 
       <h3>Dr. Sophia Miller</h3>
 
       <h4>Gynecologist</h4>
 
-      <div class="appointment-form">
+      <form class="appointment-form">
+
+        <label for="date7">Select Date</label>
 
         <input
           type="date"
           id="date7"
-          name="date7">
+          name="date7"
+          required>
+
+        <label for="time7">Select Time</label>
 
         <select
           id="time7"
-          name="time7">
+          name="time7"
+          required>
 
-          <option>Select Time</option>
+          <option value="">Select Time</option>
 
-          <option>12:30 PM</option>
+          <option value="12:30 PM">12:30 PM</option>
 
-          <option>01:30 PM</option>
+          <option value="01:30 PM">01:30 PM</option>
 
         </select>
 
-        <button class="hero-btn book-btn">
+        <p class="error-text">
+          Please select date and time
+        </p>
+
+        <button
+          type="submit"
+          class="hero-btn">
 
           Book Slot
 
         </button>
 
-      </div>
+      </form>
 
     </div>
 
-    <!-- Doctor 8 -->
+    <!-- CARD 8 -->
 
     <div class="doctor-card">
 
@@ -687,38 +865,50 @@
 
       <img
         src="./images/Doctormale.webp"
-        alt="Doctor Daniel">
+        alt="Dr Daniel Clark">
 
       <h3>Dr. Daniel Clark</h3>
 
       <h4>General Physician</h4>
 
-      <div class="appointment-form">
+      <form class="appointment-form">
+
+        <label for="date8">Select Date</label>
 
         <input
           type="date"
           id="date8"
-          name="date8">
+          name="date8"
+          required>
+
+        <label for="time8">Select Time</label>
 
         <select
           id="time8"
-          name="time8">
+          name="time8"
+          required>
 
-          <option>Select Time</option>
+          <option value="">Select Time</option>
 
-          <option>02:30 PM</option>
+          <option value="02:30 PM">02:30 PM</option>
 
-          <option>03:30 PM</option>
+          <option value="03:30 PM">03:30 PM</option>
 
         </select>
 
-        <button class="hero-btn book-btn">
+        <p class="error-text">
+          Please select date and time
+        </p>
+
+        <button
+          type="submit"
+          class="hero-btn">
 
           Book Slot
 
         </button>
 
-      </div>
+      </form>
 
     </div>
 
@@ -728,16 +918,63 @@
 
   <script>
 
-    // BOOK SLOT -> 404 PAGE
+    // SET MINIMUM DATE TO TODAY
 
-    const bookButtons =
-    document.querySelectorAll(".book-btn");
+    const today = new Date().toISOString().split("T")[0];
 
-    bookButtons.forEach(button => {
+    const allDateInputs =
+    document.querySelectorAll('input[type="date"]');
 
-      button.addEventListener("click", () => {
+    allDateInputs.forEach(input => {
 
-        window.location.href = "404.html";
+      input.min = today;
+
+    });
+
+    // BOOK APPOINTMENT
+
+    const forms =
+    document.querySelectorAll(".appointment-form");
+
+    const successMessage =
+    document.getElementById("successMessage");
+
+    forms.forEach(form => {
+
+      form.addEventListener("submit", function(e){
+
+        e.preventDefault();
+
+        const dateInput =
+        form.querySelector('input[type="date"]');
+
+        const timeSelect =
+        form.querySelector("select");
+
+        const errorText =
+        form.querySelector(".error-text");
+
+        if(
+          dateInput.value === "" ||
+          timeSelect.value === ""
+        ){
+
+          errorText.style.display = "block";
+          return;
+
+        }
+
+        errorText.style.display = "none";
+
+        successMessage.style.display = "block";
+
+        setTimeout(() => {
+
+          successMessage.style.display = "none";
+
+          window.location.href = "404.html";
+
+        }, 1500);
 
       });
 
