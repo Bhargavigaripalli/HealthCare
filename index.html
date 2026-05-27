@@ -1,19 +1,29 @@
  <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Stackly Healthcare</title>
 
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
+
 <body>
 
+  <!-- ================= NAVBAR ================= -->
   <header class="navbar-wrapper">
     <nav class="navbar">
+
+      <!-- LOGO CLICK -> HOME -->
       <a href="#home" class="logo">
         <div class="logo-icon">
           <i class="fa-solid fa-heart-pulse"></i>
@@ -32,7 +42,9 @@
           <li><a href="#services">Services</a></li>
           <li><a href="#research">Research</a></li>
           <li><a href="#blog">Blog</a></li>
-          <li><a href="#contact">Contact</a></li>
+
+          <!-- CONTACT BUTTON -> CONTACT SECTION -->
+          <li><a href="#contact-section">Contact</a></li>
         </ul>
 
         <div class="nav-buttons">
@@ -43,206 +55,434 @@
     </nav>
   </header>
 
+  <!-- ================= HERO ================= -->
   <section class="hero" id="home">
     <div class="hero-content" data-aos="fade-right">
       <span class="hero-tag">FUTURE OF SMART HEALTHCARE</span>
-      <h1>Advanced Healthcare For A Better <span>Tomorrow</span></h1>
+
+      <h1>
+        Advanced Healthcare For A Better
+        <span>Tomorrow</span>
+      </h1>
+
       <p>
-        Stackly Healthcare provides modern medical solutions, AI-powered patient care, 
-        advanced diagnostics, and expert specialists for a healthier future.
+        Stackly Healthcare provides modern medical solutions,
+        AI-powered patient care, advanced diagnostics,
+        and expert specialists for a healthier future.
       </p>
+
       <div class="hero-buttons">
-        <a href="appointment.html" class="hero-btn">Book Appointment</a>
-        <a href="404.html" class="outline-btn">Explore More</a>
+        <a href="appointment.html" class="hero-btn">
+          Book Appointment
+        </a>
+
+        <a href="404.html" class="outline-btn">
+          Explore More
+        </a>
       </div>
     </div>
 
     <div class="hero-image" data-aos="fade-left">
-      <img src="https://www.tagmedstaffing.com/wp-content/uploads/2023/12/shutterstock_786971899-scaled.jpg" alt="Smart Healthcare">
+      <img
+        src="./images/hero (1).webp"
+        alt="Smart Healthcare"
+      />
     </div>
   </section>
 
+  <!-- ================= ABOUT ================= -->
   <section class="about-section" id="about">
+
     <div class="about-image" data-aos="zoom-in">
-      <img src="https://www.drmaidhospital.in/wp-content/uploads/2021/12/Importance-of-Multispecialty-Hospital.jpg" alt="Hospital Building">
+      <img
+        src="./images/Importance-of-Multispecialty-Hospital.webp"
+        alt="Hospital Building"
+      />
     </div>
 
     <div class="about-content" data-aos="fade-left">
       <h2 class="section-title">About Stackly</h2>
+
       <p>
-        Stackly Healthcare is a modern healthcare platform designed to connect patients, 
-        doctors, and healthcare facilities through intelligent digital systems.
+        Stackly Healthcare is a modern healthcare platform
+        designed to connect patients, doctors,
+        and healthcare facilities through intelligent digital systems.
       </p>
+
       <div class="about-features">
-        <div class="feature-box"><i class="fa-solid fa-circle-check"></i> Smart Medical Systems</div>
-        <div class="feature-box"><i class="fa-solid fa-circle-check"></i> Expert Doctors</div>
-        <div class="feature-box"><i class="fa-solid fa-circle-check"></i> AI Diagnostics</div>
-        <div class="feature-box"><i class="fa-solid fa-circle-check"></i> 24/7 Emergency Support</div>
+
+        <div class="feature-box">
+          <i class="fa-solid fa-circle-check"></i>
+          Smart Medical Systems
+        </div>
+
+        <div class="feature-box">
+          <i class="fa-solid fa-circle-check"></i>
+          Expert Doctors
+        </div>
+
+        <div class="feature-box">
+          <i class="fa-solid fa-circle-check"></i>
+          AI Diagnostics
+        </div>
+
+        <div class="feature-box">
+          <i class="fa-solid fa-circle-check"></i>
+          24/7 Emergency Support
+        </div>
+
       </div>
     </div>
   </section>
 
+  <!-- ================= SERVICES ================= -->
   <section class="services-section" id="services">
-    <h2 class="section-title" data-aos="fade-up">Our Services</h2>
-    <p class="section-subtitle" data-aos="fade-up">Premium healthcare services with advanced technology.</p>
+
+    <h2 class="section-title" data-aos="fade-up">
+      Our Services
+    </h2>
+
+    <p class="section-subtitle" data-aos="fade-up">
+      Premium healthcare services with advanced technology.
+    </p>
 
     <div class="services-container">
+
       <div class="service-card" data-aos="zoom-in">
         <div class="service-img-wrapper">
-          <img src="https://www.cdi.org.in/images/home/4e23c321-9559-413a-a4cd-c948b9d6eb92_1743232868.jpg" alt="Emergency Care">
+          <img
+            src="./images/image1.webp"
+            alt="Emergency Care"
+          />
         </div>
+
         <h3>Emergency Care</h3>
-        <p>24/7 emergency medical support with rapid treatment.</p>
+
+        <p>
+          24/7 emergency medical support with rapid treatment.
+        </p>
       </div>
 
       <div class="service-card" data-aos="zoom-in">
         <div class="service-img-wrapper">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSClvRaODsigbX8UkjeXU0ZgXWpeKm6IyMumg&s" alt="Medical Research">
+          <img
+            src="./images/image3.webp"
+            alt="Medical Research"
+          />
         </div>
+
         <h3>Medical Research</h3>
-        <p>AI-powered healthcare research and innovation.</p>
+
+        <p>
+          AI-powered healthcare research and innovation.
+        </p>
       </div>
 
       <div class="service-card" data-aos="zoom-in">
         <div class="service-img-wrapper">
-          <img src="https://www.drmaidhospital.in/wp-content/uploads/2021/12/Importance-of-Multispecialty-Hospital.jpg" alt="Expert Specialists">
+          <img
+            src="./images/image4.webp"
+            alt="Expert Specialists"
+          />
         </div>
+
         <h3>Expert Specialists</h3>
-        <p>Highly experienced doctors with modern expertise.</p>
+
+        <p>
+          Highly experienced doctors with modern expertise.
+        </p>
       </div>
+
     </div>
   </section>
 
+  <!-- ================= STATS ================= -->
   <section class="stats-section">
+
     <div class="stats-container">
+
       <div class="stat-box" data-aos="fade-up">
         <h2 class="counter" data-target="120">0</h2>
         <p>Expert Doctors</p>
       </div>
+
       <div class="stat-box" data-aos="fade-up">
         <h2 class="counter" data-target="5000">0</h2>
         <p>Happy Patients</p>
       </div>
+
       <div class="stat-box" data-aos="fade-up">
         <h2 class="counter" data-target="35">0</h2>
         <p>Departments</p>
       </div>
+
       <div class="stat-box" data-aos="fade-up">
         <h2 class="counter" data-target="15">0</h2>
         <p>Years Experience</p>
       </div>
+
     </div>
   </section>
 
+  <!-- ================= RESEARCH ================= -->
   <section class="research-section" id="research">
+
     <div class="research-content" data-aos="fade-right">
-      <h2 class="section-title">Medical Research & Innovation</h2>
+
+      <h2 class="section-title">
+        Medical Research & Innovation
+      </h2>
+
       <p>
-        Our intelligent healthcare research focuses on digital healthcare systems, 
-        AI-powered diagnostics, and smart patient monitoring.
+        Our intelligent healthcare research focuses on
+        digital healthcare systems, AI-powered diagnostics,
+        and smart patient monitoring.
       </p>
-      <a href="#" class="hero-btn">Explore Research</a>
+
+      <a href="404.html" class="hero-btn">
+        Explore Research
+      </a>
     </div>
 
     <div class="research-image" data-aos="fade-left">
-      <img src="https://www.tagmedstaffing.com/wp-content/uploads/2023/12/shutterstock_786971899-scaled.jpg" alt="Research Facility">
+      <img
+        src="./images/hero (1).webp"
+        alt="Research Facility"
+      />
     </div>
   </section>
 
+  <!-- ================= BLOG ================= -->
   <section class="blog-section" id="blog">
-    <h2 class="section-title" data-aos="fade-up">Latest Healthcare Blogs</h2>
+
+    <h2 class="section-title" data-aos="fade-up">
+      Latest Healthcare Blogs
+    </h2>
 
     <div class="blog-container">
+
       <div class="blog-card" data-aos="fade-up">
+
         <div class="blog-img-wrapper">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSClvRaODsigbX8UkjeXU0ZgXWpeKm6IyMumg&s" alt="AI Blog">
+          <img
+            src="./images/image3.webp"
+            alt="AI Blog"
+          />
         </div>
+
         <div class="blog-content">
           <h3>Future Of AI In Healthcare</h3>
-          <p>Discover how artificial intelligence is transforming patient care.</p>
+
+          <p>
+            Discover how artificial intelligence
+            is transforming patient care.
+          </p>
         </div>
+
       </div>
 
       <div class="blog-card" data-aos="fade-up">
+
         <div class="blog-img-wrapper">
-          <img src="https://www.drmaidhospital.in/wp-content/uploads/2021/12/Importance-of-Multispecialty-Hospital.jpg" alt="Hospital Tech Blog">
+          <img
+            src="./images/image4.webp"
+            alt="Hospital Tech Blog"
+          />
         </div>
+
         <div class="blog-content">
           <h3>Smart Hospital Technologies</h3>
-          <p>Learn about the latest advancements in healthcare systems.</p>
+
+          <p>
+            Learn about the latest advancements
+            in healthcare systems.
+          </p>
         </div>
+
       </div>
+
     </div>
   </section>
 
+   <!-- ================= CONTACT SECTION ================= -->
+<section class="contact-section" id="contact-section">
+
+  <div class="contact-container" data-aos="fade-up">
+
+    <h2 class="section-title">
+      Contact Us
+    </h2>
+
+    <p class="section-subtitle">
+      Reach out to Stackly Healthcare anytime.
+    </p>
+
+    <!-- HORIZONTAL CONTACT CARDS -->
+    <div class="contact-grid">
+
+      <div class="contact-card">
+        <i class="fa-solid fa-phone"></i>
+        <h3>Phone</h3>
+        <p>+91 9876543210</p>
+      </div>
+
+      <div class="contact-card">
+        <i class="fa-solid fa-envelope"></i>
+        <h3>Email</h3>
+        <p>stacklyhealthcare@gmail.com</p>
+      </div>
+
+      <div class="contact-card">
+        <i class="fa-solid fa-location-dot"></i>
+        <h3>Location</h3>
+        <p>Hyderabad, India</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+   
+
+  <!-- ================= CTA ================= -->
   <section class="cta-section">
+
     <div class="cta-overlay"></div>
+
     <div class="cta-content" data-aos="zoom-in">
+
       <span class="cta-tag">SMART HEALTHCARE</span>
-      <h2>Ready To Experience Modern Healthcare?</h2>
+
+      <h2>
+        Ready To Experience Modern Healthcare?
+      </h2>
+
       <p>
-        Join Stackly Healthcare and experience AI-powered treatment, smart diagnostics, 
-        expert specialists, and world-class patient care for a healthier future.
+        Join Stackly Healthcare and experience
+        AI-powered treatment, smart diagnostics,
+        expert specialists, and world-class patient care.
       </p>
+
       <div class="cta-buttons">
-        <a href="register.html" class="hero-btn">Get Started</a>
-        <a href="appointment.html" class="outline-btn cta-outline">Book Appointment</a>
+
+        <a href="register.html" class="hero-btn">
+          Get Started
+        </a>
+
+        <a href="appointment.html" class="outline-btn cta-outline">
+          Book Appointment
+        </a>
+
       </div>
     </div>
   </section>
 
-  <footer class="footer" id="contact">
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+
     <div class="footer-top">
+
+      <!-- FOOTER LOGO CLICK -> HOME -->
       <div class="footer-brand">
-        <div class="footer-logo">
+
+        <a href="#home" class="footer-logo">
+
           <div class="footer-icon">
             <i class="fa-solid fa-heart-pulse"></i>
           </div>
+
           <h2>Stackly</h2>
-        </div>
+
+        </a>
+
         <p>
-          Stackly Healthcare delivers advanced medical solutions powered by AI, 
-          expert specialists, smart patient care, and innovative healthcare technologies.
+          Stackly Healthcare delivers advanced medical solutions powered by AI,
+          expert specialists, smart patient care,
+          and innovative healthcare technologies.
         </p>
+
         <div class="footer-contact">
           <p><i class="fa-solid fa-phone"></i> +91 9876543210</p>
           <p><i class="fa-solid fa-envelope"></i> stacklyhealthcare@gmail.com</p>
           <p><i class="fa-solid fa-location-dot"></i> Hyderabad, India</p>
         </div>
+
+        <!-- SOCIAL MEDIA -> 404 PAGE -->
         <div class="social-icons">
-          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#"><i class="fa-brands fa-twitter"></i></a>
-          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+
+          <a href="404.html">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+
+          <a href="404.html">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+
+          <a href="404.html">
+            <i class="fa-brands fa-twitter"></i>
+          </a>
+
+          <a href="404.html">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+
         </div>
+
       </div>
 
       <div class="footer-links">
+
         <h3>Quick Links</h3>
+
         <a href="#home">Home</a>
         <a href="#about">About Us</a>
         <a href="#services">Services</a>
         <a href="#research">Research</a>
         <a href="#blog">Blog</a>
+        <a href="#contact-section">Contact</a>
+
       </div>
 
       <div class="footer-links">
+
         <h3>Healthcare Services</h3>
-        <a href="#">Emergency Care</a>
-        <a href="#">AI Diagnostics</a>
-        <a href="#">Expert Doctors</a>
-        <a href="#">Patient Monitoring</a>
-        <a href="#">Medical Research</a>
+
+        <a href="404.html">Emergency Care</a>
+        <a href="404.html">AI Diagnostics</a>
+        <a href="404.html">Expert Doctors</a>
+        <a href="404.html">Patient Monitoring</a>
+        <a href="404.html">Medical Research</a>
+
       </div>
 
       <div class="footer-newsletter">
+
         <h3>Newsletter</h3>
-        <p>Subscribe to receive healthcare updates, wellness tips, and latest medical innovations.</p>
-        <form onsubmit="event.preventDefault();" class="newsletter-form">
-          <input type="email" placeholder="Enter your email" required>
-          <button type="submit">Subscribe</button>
-        </form>
+
+        <p>
+          Subscribe to receive healthcare updates,
+          wellness tips, and latest medical innovations.
+        </p>
+
+       <form action="404.html" class="newsletter-form">
+
+  <input
+    type="email"
+    id="newsletterEmail"
+    name="newsletterEmail"
+    placeholder="Enter your email"
+    autocomplete="email"
+    required
+  />
+
+  <button type="submit">
+    Subscribe
+  </button>
+
+</form>
+
       </div>
+
     </div>
 
     <div class="footer-bottom">
@@ -251,57 +491,85 @@
     </div>
   </footer>
 
+  <!-- ================= SCRIPTS ================= -->
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
   <script>
+
     AOS.init({
       duration: 1000,
       once: true
     });
 
-    // Handle Mobile Responsive Menu Expand
+    // MOBILE MENU
     const menuToggle = document.getElementById("menuToggle");
     const navMenu = document.getElementById("navMenu");
     const navLinks = document.querySelectorAll(".nav-links li a");
 
     menuToggle.addEventListener("click", () => {
+
       navMenu.classList.toggle("active");
+
       const icon = menuToggle.querySelector("i");
-      if(navMenu.classList.contains("active")) {
+
+      if (navMenu.classList.contains("active")) {
         icon.classList.remove("fa-bars");
         icon.classList.add("fa-xmark");
       } else {
         icon.classList.remove("fa-xmark");
         icon.classList.add("fa-bars");
       }
+
     });
 
-    // Automatically close drawer when clicking individual menu links
+    // CLOSE MOBILE MENU ON LINK CLICK
     navLinks.forEach(link => {
+
       link.addEventListener("click", () => {
+
         navMenu.classList.remove("active");
+
         const icon = menuToggle.querySelector("i");
+
         icon.classList.remove("fa-xmark");
         icon.classList.add("fa-bars");
+
       });
+
     });
 
-    // Counter Increment Animation Logic
+    // COUNTER ANIMATION
     const counters = document.querySelectorAll('.counter');
+
     counters.forEach(counter => {
+
       counter.innerText = '0';
+
       const updateCounter = () => {
+
         const target = +counter.getAttribute('data-target');
         const c = +counter.innerText;
         const increment = target / 100;
+
         if (c < target) {
+
           counter.innerText = `${Math.ceil(c + increment)}`;
+
           setTimeout(updateCounter, 20);
+
         } else {
+
           counter.innerText = target + '+';
+
         }
+
       };
+
       updateCounter();
+
     });
+
   </script>
+
 </body>
 </html>

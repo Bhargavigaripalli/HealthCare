@@ -10,11 +10,13 @@
   <title>Book Appointment | Stackly Healthcare</title>
 
   <!-- GOOGLE FONT -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
 
   <!-- FONT AWESOME -->
   <link rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
   <style>
 
@@ -26,56 +28,9 @@
     }
 
     body{
-
       background:#f1f5f9;
-
       min-height:100vh;
-
       padding:40px 6%;
-    }
-
-    /* =========================
-       SUCCESS MESSAGE
-    ========================= */
-
-    .success-message{
-
-      position:fixed;
-
-      top:20px;
-      right:20px;
-
-      background:#10b981;
-
-      color:white;
-
-      padding:16px 28px;
-
-      border-radius:14px;
-
-      font-weight:600;
-
-      box-shadow:0 10px 25px rgba(0,0,0,0.2);
-
-      display:none;
-
-      z-index:2000;
-
-      animation:slideIn 0.5s ease;
-    }
-
-    @keyframes slideIn{
-
-      from{
-        transform:translateX(100px);
-        opacity:0;
-      }
-
-      to{
-        transform:translateX(0);
-        opacity:1;
-      }
-
     }
 
     /* =========================
@@ -387,14 +342,6 @@
         width:100%;
       }
 
-      .success-message{
-
-        right:10px;
-        left:10px;
-
-        text-align:center;
-      }
-
     }
 
   </style>
@@ -402,14 +349,6 @@
 </head>
 
 <body>
-
-  <!-- SUCCESS MESSAGE -->
-
-  <div class="success-message" id="successMessage">
-
-    ✅ Appointment Booked Successfully
-
-  </div>
 
   <!-- TOP BAR -->
 
@@ -445,7 +384,9 @@
 
       <div class="doctor-top"></div>
 
-      <img src="https://randomuser.me/api/portraits/women/65.jpg">
+      <img
+        src="./images/Doctorfemale.webp"
+        alt="Doctor Sarah">
 
       <h3>Dr. Sarah Johnson</h3>
 
@@ -453,9 +394,14 @@
 
       <div class="appointment-form">
 
-        <input type="date">
+        <input
+          type="date"
+          id="date1"
+          name="date1">
 
-        <select>
+        <select
+          id="time1"
+          name="time1">
 
           <option>Select Time</option>
 
@@ -481,7 +427,9 @@
 
       <div class="doctor-top"></div>
 
-      <img src="https://randomuser.me/api/portraits/men/45.jpg">
+      <img
+        src="./images/Doctormale.webp"
+        alt="Doctor Michael">
 
       <h3>Dr. Michael Lee</h3>
 
@@ -489,9 +437,14 @@
 
       <div class="appointment-form">
 
-        <input type="date">
+        <input
+          type="date"
+          id="date2"
+          name="date2">
 
-        <select>
+        <select
+          id="time2"
+          name="time2">
 
           <option>Select Time</option>
 
@@ -517,7 +470,9 @@
 
       <div class="doctor-top"></div>
 
-      <img src="https://randomuser.me/api/portraits/women/40.jpg">
+      <img
+        src="./images/Doctorfemale.webp"
+        alt="Doctor Emily">
 
       <h3>Dr. Emily Davis</h3>
 
@@ -525,9 +480,14 @@
 
       <div class="appointment-form">
 
-        <input type="date">
+        <input
+          type="date"
+          id="date3"
+          name="date3">
 
-        <select>
+        <select
+          id="time3"
+          name="time3">
 
           <option>Select Time</option>
 
@@ -553,7 +513,9 @@
 
       <div class="doctor-top"></div>
 
-      <img src="https://randomuser.me/api/portraits/men/30.jpg">
+      <img
+        src="./images/Doctormale.webp"
+        alt="Doctor Robert">
 
       <h3>Dr. Robert Smith</h3>
 
@@ -561,9 +523,14 @@
 
       <div class="appointment-form">
 
-        <input type="date">
+        <input
+          type="date"
+          id="date4"
+          name="date4">
 
-        <select>
+        <select
+          id="time4"
+          name="time4">
 
           <option>Select Time</option>
 
@@ -589,7 +556,9 @@
 
       <div class="doctor-top"></div>
 
-      <img src="https://randomuser.me/api/portraits/women/55.jpg">
+      <img
+        src="./images/Doctorfemale.webp"
+        alt="Doctor Olivia">
 
       <h3>Dr. Olivia Brown</h3>
 
@@ -597,9 +566,14 @@
 
       <div class="appointment-form">
 
-        <input type="date">
+        <input
+          type="date"
+          id="date5"
+          name="date5">
 
-        <select>
+        <select
+          id="time5"
+          name="time5">
 
           <option>Select Time</option>
 
@@ -625,7 +599,9 @@
 
       <div class="doctor-top"></div>
 
-      <img src="https://randomuser.me/api/portraits/men/22.jpg">
+      <img
+        src="./images/Doctormale.webp"
+        alt="Doctor James">
 
       <h3>Dr. James Wilson</h3>
 
@@ -633,9 +609,14 @@
 
       <div class="appointment-form">
 
-        <input type="date">
+        <input
+          type="date"
+          id="date6"
+          name="date6">
 
-        <select>
+        <select
+          id="time6"
+          name="time6">
 
           <option>Select Time</option>
 
@@ -661,7 +642,9 @@
 
       <div class="doctor-top"></div>
 
-      <img src="https://randomuser.me/api/portraits/women/32.jpg">
+      <img
+        src="./images/Doctorfemale.webp"
+        alt="Doctor Sophia">
 
       <h3>Dr. Sophia Miller</h3>
 
@@ -669,9 +652,14 @@
 
       <div class="appointment-form">
 
-        <input type="date">
+        <input
+          type="date"
+          id="date7"
+          name="date7">
 
-        <select>
+        <select
+          id="time7"
+          name="time7">
 
           <option>Select Time</option>
 
@@ -697,7 +685,9 @@
 
       <div class="doctor-top"></div>
 
-      <img src="https://randomuser.me/api/portraits/men/60.jpg">
+      <img
+        src="./images/Doctormale.webp"
+        alt="Doctor Daniel">
 
       <h3>Dr. Daniel Clark</h3>
 
@@ -705,9 +695,14 @@
 
       <div class="appointment-form">
 
-        <input type="date">
+        <input
+          type="date"
+          id="date8"
+          name="date8">
 
-        <select>
+        <select
+          id="time8"
+          name="time8">
 
           <option>Select Time</option>
 
@@ -733,27 +728,22 @@
 
   <script>
 
+    // BOOK SLOT -> 404 PAGE
+
     const bookButtons =
     document.querySelectorAll(".book-btn");
-
-    const successMessage =
-    document.getElementById("successMessage");
 
     bookButtons.forEach(button => {
 
       button.addEventListener("click", () => {
 
-        successMessage.style.display = "block";
-
-        setTimeout(() => {
-
-          successMessage.style.display = "none";
-
-        }, 3000);
+        window.location.href = "404.html";
 
       });
 
     });
+
+    // LOGOUT
 
     function logout(){
 
