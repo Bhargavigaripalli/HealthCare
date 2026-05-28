@@ -241,6 +241,46 @@
     }
 
     /* =========================
+       PASSWORD TOGGLE
+    ========================== */
+
+    .password-wrapper{
+
+      position:relative;
+
+      width:100%;
+    }
+
+    .password-wrapper input{
+
+      padding-right:50px;
+    }
+
+    .toggle-password{
+
+      position:absolute;
+
+      right:18px;
+
+      top:40%;
+
+      transform:translateY(-50%);
+
+      color:#cbd5e1;
+
+      cursor:pointer;
+
+      font-size:16px;
+
+      transition:0.3s;
+    }
+
+    .toggle-password:hover{
+
+      color:#38bdf8;
+    }
+
+    /* =========================
        PASSWORD NOTE
     ========================== */
 
@@ -379,7 +419,7 @@
     }
 
     /* =========================
-       TABLET RESPONSIVE
+       RESPONSIVE
     ========================== */
 
     @media(max-width:992px){
@@ -423,10 +463,6 @@
       }
     }
 
-    /* =========================
-       MOBILE RESPONSIVE
-    ========================== */
-
     @media(max-width:768px){
 
       body{
@@ -465,46 +501,9 @@
 
         font-size:32px;
       }
-
-      .auth-form-section p{
-
-        font-size:14px;
-      }
-
-      form input,
-      form select{
-
-        padding:15px;
-      }
-
-      .demo-box{
-
-        padding:18px;
-      }
     }
 
-    /* =========================
-       SMALL MOBILE
-    ========================== */
-
     @media(max-width:480px){
-
-      body{
-
-        padding:12px;
-      }
-
-      .auth-container{
-
-        margin-top:65px;
-
-        border-radius:20px;
-      }
-
-      .auth-image{
-
-        height:190px;
-      }
 
       .auth-form-section{
 
@@ -516,44 +515,9 @@
         font-size:28px;
       }
 
-      .auth-form-section p{
-
-        font-size:13px;
-      }
-
-      form input,
-      form select{
-
-        padding:14px;
-
-        font-size:14px;
-      }
-
       .auth-btn{
 
         padding:14px;
-
-        font-size:15px;
-      }
-
-      .password-note{
-
-        font-size:12px;
-      }
-
-      .demo-box h3{
-
-        font-size:18px;
-      }
-
-      .demo-box p{
-
-        font-size:13px;
-      }
-
-      .auth-link{
-
-        font-size:14px;
       }
     }
 
@@ -606,13 +570,26 @@
           type="email"
           id="email"
           placeholder="Email Address"
+          autocomplete="email"
           required>
 
-        <input
-          type="password"
-          id="password"
-          placeholder="Password"
-          required>
+        <!-- PASSWORD -->
+
+        <div class="password-wrapper">
+
+          <input
+            type="password"
+            id="password"
+            placeholder="Password"
+            autocomplete="current-password"
+            required>
+
+          <i
+            class="fa-solid fa-eye toggle-password"
+            id="togglePassword">
+          </i>
+
+        </div>
 
         <div class="password-note">
 
@@ -681,24 +658,18 @@
         <h3>Demo Access</h3>
 
         <p>
-
           <strong>Admin:</strong>
           admin@stackly.com
-
         </p>
 
         <p>
-
           <strong>Doctor:</strong>
           doctor@stackly.com
-
         </p>
 
         <p>
-
           <strong>Patient:</strong>
           patient@stackly.com
-
         </p>
 
       </div>
@@ -711,6 +682,40 @@
 
   <script>
 
+    // PASSWORD SHOW/HIDE
+
+    const togglePassword =
+    document.getElementById("togglePassword");
+
+    const passwordInput =
+    document.getElementById("password");
+
+    togglePassword.addEventListener("click", () => {
+
+      if(passwordInput.type === "password"){
+
+        passwordInput.type = "text";
+
+        togglePassword.classList.remove("fa-eye");
+
+        togglePassword.classList.add("fa-eye-slash");
+
+      }
+
+      else{
+
+        passwordInput.type = "password";
+
+        togglePassword.classList.remove("fa-eye-slash");
+
+        togglePassword.classList.add("fa-eye");
+
+      }
+
+    });
+
+    // LOGIN FORM
+
     document
     .getElementById("loginForm")
     .addEventListener("submit", function(event){
@@ -718,7 +723,7 @@
       event.preventDefault();
 
       const email =
-      document.getElementById("email").value;
+      document.getElementById("email").value.trim();
 
       const password =
       document.getElementById("password").value;
@@ -754,7 +759,7 @@
         return;
       }
 
-      // REDIRECT BASED ON ROLE
+      // ROLE REDIRECT
 
       if(role === "admin"){
 
